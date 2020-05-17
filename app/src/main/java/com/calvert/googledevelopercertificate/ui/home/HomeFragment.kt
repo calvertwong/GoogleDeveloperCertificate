@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.googledevelopercertificate.R
@@ -14,18 +13,18 @@ import com.calvert.googledevelopercertificate.ui.home.adapter.TopicItemAdapter
 
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
 
-        val rvTopicItem: RecyclerView = root.findViewById(R.id.rv_topic_item)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val rvTopicItem: RecyclerView = view.findViewById(R.id.rv_topic_item)
         rvTopicItem.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter =
@@ -33,9 +32,5 @@ class HomeFragment : Fragment() {
                     TOPIC_LIST
                 )
         }
-//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
-        return root
     }
 }

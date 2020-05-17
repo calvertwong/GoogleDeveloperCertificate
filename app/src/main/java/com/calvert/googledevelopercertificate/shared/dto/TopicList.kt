@@ -6,7 +6,11 @@ val TOPIC_LIST: List<TopicObject> = listOf(
     TopicObject(
         "Toast",
         listOf("The Basics", "Positioning your Toast", "Creating a Custom Toast View"),
-        listOf(R.id.action_goto_donate, R.id.action_goto_donate, R.id.action_goto_donate)
+        listOf(
+            R.id.action_goto_basic_toast,
+            R.id.action_goto_positioning_your_toast,
+            R.id.action_goto_donate
+        )
     ),
     TopicObject(
         "Snackbar",

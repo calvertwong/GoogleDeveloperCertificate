@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".positioning_your_toast.PositioningYourToastFragment">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tv_show_top_left_toast"
+            style="@style/Positioning_Your_Toast_Button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/top_left_toast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tv_show_top_center_toast"
+            style="@style/Positioning_Your_Toast_Button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/top_center_toast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_show_top_left_toast" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tv_show_top_right_toast"
+            style="@style/Positioning_Your_Toast_Button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/top_right_toast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_show_top_center_toast" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tv_show_center_left_toast"
+            style="@style/Positioning_Your_Toast_Button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/center_left_toast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_show_top_right_toast" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tv_show_center_toast"
+            style="@style/Positioning_Your_Toast_Button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/center_toast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_show_center_left_toast" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tv_show_center_right_toast"
+            style="@style/Positioning_Your_Toast_Button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/center_right_toast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_show_center_toast" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tv_show_bottom_left_toast"
+            style="@style/Positioning_Your_Toast_Button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bottom_left_toast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_show_center_right_toast" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tv_show_bottom_center_toast"
+            style="@style/Positioning_Your_Toast_Button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bottom_center_toast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_show_bottom_left_toast" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tv_show_bottom_right_toast"
+            style="@style/Positioning_Your_Toast_Button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/bottom_right_toast"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_show_bottom_center_toast" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

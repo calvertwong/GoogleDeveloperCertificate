@@ -2,4 +2,6 @@
     <string name="app_name">GoogleDeveloperCertificate</string>
     <string name="title_home">Home</string>
     <string name="title_donate">Donate</string>
+    <string name="basic_toast">Basic Toast</string>
+    <string name="positioning_your_toast">Positioning Your Toast</string>
 </resources>

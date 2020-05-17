@@ -4,4 +4,5 @@
     <string name="title_donate">Donate</string>
     <string name="basic_toast">Basic Toast</string>
     <string name="positioning_your_toast">Positioning Your Toast</string>
+    <string name="custom_toast">Custom Toast</string>
 </resources>

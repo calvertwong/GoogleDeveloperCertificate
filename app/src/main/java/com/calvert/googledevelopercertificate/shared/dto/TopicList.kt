@@ -9,12 +9,7 @@ val TOPIC_LIST: List<TopicObject> = listOf(
         listOf(
             R.id.action_goto_basic_toast,
             R.id.action_goto_positioning_your_toast,
-            R.id.action_goto_donate
+            R.id.action_goto_custom_toast
         )
-    ),
-    TopicObject(
-        "Snackbar",
-        listOf(""),
-        listOf(0)
     )
 )

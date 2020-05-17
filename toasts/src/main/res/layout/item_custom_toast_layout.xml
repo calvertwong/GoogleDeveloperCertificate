@@ -5,7 +5,7 @@
     android:id="@+id/cl_custom_toast_layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true">
+    android:background="@color/design_default_color_secondary">
 
     <ImageView
         android:id="@+id/iv_front_alert_icon"

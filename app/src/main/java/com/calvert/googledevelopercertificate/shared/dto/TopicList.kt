@@ -11,5 +11,12 @@ val TOPIC_LIST: List<TopicObject> = listOf(
             R.id.action_goto_positioning_your_toast,
             R.id.action_goto_custom_toast
         )
+    ),
+    TopicObject(
+        "View Binding",
+        listOf("Basic Demo"),
+        listOf(
+            R.id.action_goto_view_binding
+        )
     )
 )

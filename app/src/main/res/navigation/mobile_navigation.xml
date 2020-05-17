@@ -42,6 +42,12 @@
             app:destination="@+id/navigation_custom_toast"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_view_binding"
+            app:destination="@+id/navigation_view_binding"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
 
     <fragment
@@ -67,4 +73,10 @@
         android:name="com.calvert.toasts.custom_toast.CustomToastFragment"
         android:label="@string/custom_toast"
         tools:layout="@layout/fragment_custom_toast" />
+
+    <fragment
+        android:id="@+id/navigation_view_binding"
+        android:name="com.calvert.viewbinding.ViewBindingDemoFragment"
+        android:label="@string/view_binding"
+        tools:layout="@layout/fragment_view_binding_demo" />
 </navigation>

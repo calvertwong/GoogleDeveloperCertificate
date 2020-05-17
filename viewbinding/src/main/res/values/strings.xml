@@ -1,0 +1,3 @@
+<resources>
+    <string name="view_binding_demo_text">View binding demo is working fine if you are seeing this.</string>
+</resources>

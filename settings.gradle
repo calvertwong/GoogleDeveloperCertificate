@@ -1,2 +1,4 @@
 rootProject.name='GoogleDeveloperCertificate'
 include ':app'
+include ':donate'
+include ':toasts'

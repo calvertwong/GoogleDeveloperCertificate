@@ -11,16 +11,18 @@ import com.calvert.viewbinding.databinding.FragmentViewBindingDemoBinding
  * View binding should be used when we have simple use cases.
  *
  * View binding provides advantages such as:
- * 1) Null safety to the views to ensure there is no risk of a null pointer exception due to
+ * 1) Get rid of findViewById()
+ *
+ * 2) Null safety to the views to ensure there is no risk of a null pointer exception due to
  * an invalid view ID.
  *
- * 2) Type safety to ensure there is no risk of a class cast exception
+ * 3) Type safety to ensure there is no risk of a class cast exception
  *
- * 3) Faster compilation because it doesn't require annotation processing.
+ * 4) Faster compilation because it doesn't require annotation processing.
  *
- * 4) Doesn't require specially-tagged XML layout files like data binding.
+ * 5) Doesn't require specially-tagged XML layout files like data binding.
  *
- * 5) All we need to do is enable view binding in the .build/gradle
+ * 6) All we need to do is enable view binding in the .build/gradle, done
  *
  * Limitation
  * 1) Doesn't support layout variables or expression. (to use this feature, refer to data binding)

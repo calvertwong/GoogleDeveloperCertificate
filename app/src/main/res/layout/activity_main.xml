@@ -4,8 +4,10 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:layout_marginStart="@dimen/default_horizontal_margin"
+    android:layout_marginEnd="@dimen/default_horizontal_margin">
 
+    <!--Bottom navigation drawer-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
@@ -18,6 +20,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
+    <!--This is a special widget called NavHostFragment and this widget swaps and displays destinations-->
+    <!--android:name and app:defaultNavHost connect the back button to the NavHostFragment-->
+    <!--app:navGraph associates the app with the navigation graph-->
     <fragment
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"

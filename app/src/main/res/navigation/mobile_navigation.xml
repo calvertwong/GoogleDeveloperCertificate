@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--This is the navigation graph which is a XML resource.-->
+<!--The graph contains information such as destinations of the whole app and-->
+<!--paths a user could take through the app. To add a navigation, this place is the first step.-->
+
+<!--  <navigation> is the root node of the graph  -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
+    <!--  <fragment> can contains <action>, <argument>, and <deepLink>  -->
+    <!--  Navigation by actions allows us to visualize the path, add transition animation, arguments values, and backstack behavior.-->
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.calvert.googledevelopercertificate.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_goto_donate"
+            app:destination="@+id/navigation_donate"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.calvert.googledevelopercertificate.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.calvert.googledevelopercertificate.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_donate"
+        android:name="com.calvert.donate.ui.donate.DonateFragment"
+        android:label="@string/title_donate"
+        tools:layout="@layout/fragment_donate" />
 </navigation>

@@ -48,6 +48,24 @@
             app:destination="@+id/navigation_view_binding"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_barrier"
+            app:destination="@+id/navigation_barrier"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_chain"
+            app:destination="@+id/navigation_chain"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_keyframe_animation"
+            app:destination="@+id/navigation_keyframe_animation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
 
     <fragment
@@ -79,4 +97,22 @@
         android:name="com.calvert.viewbinding.ViewBindingDemoFragment"
         android:label="@string/view_binding"
         tools:layout="@layout/fragment_view_binding_demo" />
+
+    <fragment
+        android:id="@+id/navigation_barrier"
+        android:name="com.calvert.responsiveuiconstraintlayout.barrier.BarrierFragment"
+        android:label="@string/Barrier"
+        tools:layout="@layout/fragment_barrier" />
+
+    <fragment
+        android:id="@+id/navigation_chain"
+        android:name="com.calvert.responsiveuiconstraintlayout.chain.ChainFragment"
+        android:label="@string/chain"
+        tools:layout="@layout/fragment_chain" />
+
+    <fragment
+        android:id="@+id/navigation_keyframe_animation"
+        android:name="com.calvert.responsiveuiconstraintlayout.keyframeanimation.KeyframeAnimationFragment"
+        android:label="@string/keyframe_animation"
+        tools:layout="@layout/fragment_keyframe_animation" />
 </navigation>

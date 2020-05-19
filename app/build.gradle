@@ -57,4 +57,5 @@ dependencies {
     implementation project(':donate')
     implementation project(':toasts')
     implementation project(':viewbinding')
+    implementation project(':responsiveuiconstraintlayout')
 }

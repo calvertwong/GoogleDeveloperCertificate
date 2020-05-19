@@ -6,4 +6,7 @@
     <string name="positioning_your_toast">Positioning Your Toast</string>
     <string name="custom_toast">Custom Toast</string>
     <string name="view_binding">View Binding</string>
+    <string name="Barrier">Barrier</string>
+    <string name="chain">Chain</string>
+    <string name="keyframe_animation">Keyframe Animation</string>
 </resources>

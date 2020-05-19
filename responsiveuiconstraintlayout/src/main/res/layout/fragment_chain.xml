@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".chain.ChainFragment">
+
+        <TextView
+            android:id="@+id/tv_spread_explain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/spread_explain"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_spread_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/head"
+            app:layout_constraintEnd_toStartOf="@+id/btn_spread_body"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_spread_explain" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_spread_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/body"
+            app:layout_constraintEnd_toStartOf="@+id/btn_spread_tail"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/btn_spread_head"
+            app:layout_constraintTop_toTopOf="@+id/btn_spread_head" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_spread_tail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/btn_spread_body"
+            app:layout_constraintTop_toTopOf="@+id/btn_spread_body" />
+
+        <TextView
+            android:id="@+id/tv_spread_inside_explain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/spread_inside_explain"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_spread_head" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_spread_inside_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/head"
+            app:layout_constraintEnd_toStartOf="@+id/btn_spread_inside_body"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_spread_inside_explain" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_spread_inside_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/body"
+            app:layout_constraintEnd_toStartOf="@+id/btn_spread_inside_tail"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/btn_spread_inside_head"
+            app:layout_constraintTop_toTopOf="@+id/btn_spread_inside_head" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_spread_inside_tail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/btn_spread_inside_body"
+            app:layout_constraintTop_toTopOf="@+id/btn_spread_inside_body" />
+
+        <TextView
+            android:id="@+id/tv_weighted_explain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/weighted_explain"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_spread_inside_head" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_weighted_head"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/weight_1"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/btn_spread_inside_body"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_weighted_explain" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_weighted_body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/weight_6"
+            app:layout_constraintEnd_toStartOf="@id/btn_weighted_tail"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="6"
+            app:layout_constraintStart_toEndOf="@+id/btn_weighted_head"
+            app:layout_constraintTop_toTopOf="@+id/btn_weighted_head" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_weighted_tail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/weight_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintStart_toEndOf="@+id/btn_weighted_body"
+            app:layout_constraintTop_toTopOf="@+id/btn_weighted_body" />
+
+        <TextView
+            android:id="@+id/tv_packed_explain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/packed_explain"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_weighted_tail" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_packed_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/head"
+            app:layout_constraintEnd_toStartOf="@id/btn_packed_body"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_packed_explain" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_packed_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/body"
+            app:layout_constraintEnd_toStartOf="@id/btn_packed_tail"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/btn_packed_head"
+            app:layout_constraintTop_toTopOf="@id/btn_packed_head" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_packed_tail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/btn_packed_body"
+            app:layout_constraintTop_toTopOf="@id/btn_packed_body" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

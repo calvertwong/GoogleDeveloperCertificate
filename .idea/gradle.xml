@@ -11,7 +11,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/commonstyling" />
             <option value="$PROJECT_DIR$/donate" />
+            <option value="$PROJECT_DIR$/responsiveuiconstraintlayout" />
             <option value="$PROJECT_DIR$/toasts" />
             <option value="$PROJECT_DIR$/viewbinding" />
           </set>

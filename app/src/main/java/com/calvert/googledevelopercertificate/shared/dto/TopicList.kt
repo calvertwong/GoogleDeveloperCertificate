@@ -18,5 +18,14 @@ val TOPIC_LIST: List<TopicObject> = listOf(
         listOf(
             R.id.action_goto_view_binding
         )
+    ),
+    TopicObject(
+        "Constraint Layout",
+        listOf("Barrier", "Chain", "Keyframe Animation"),
+        listOf(
+            R.id.action_goto_barrier,
+            R.id.action_goto_chain,
+            R.id.action_goto_keyframe_animation
+        )
     )
 )

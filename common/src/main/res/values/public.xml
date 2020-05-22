@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Add resources here to make them public-->
+    <public name="default_horizontal_margin" type="Int" />
+    <public name="default_vertical_margin" type="Int" />
+</resources>

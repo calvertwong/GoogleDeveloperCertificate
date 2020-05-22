@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.googledevelopercertificate.R
-import com.calvert.googledevelopercertificate.shared.dto.TOPIC_LIST
+import com.calvert.googledevelopercertificate.dto.TOPIC_LIST
 import com.calvert.googledevelopercertificate.ui.home.adapter.TopicItemAdapter
 
 class HomeFragment : Fragment() {

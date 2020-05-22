@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.googledevelopercertificate.R
-import com.calvert.googledevelopercertificate.shared.dto.TopicObject
+import com.calvert.googledevelopercertificate.dto.TopicObject
 import com.calvert.googledevelopercertificate.ui.home.viewholder.TopicItemViewHolder
 
 class TopicItemAdapter(private val topicItemList: List<TopicObject>) :

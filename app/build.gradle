@@ -58,4 +58,6 @@ dependencies {
     implementation project(':toasts')
     implementation project(':viewbinding')
     implementation project(':responsiveuiconstraintlayout')
+    implementation project(':recyclerview')
+    implementation project(':common')
 }

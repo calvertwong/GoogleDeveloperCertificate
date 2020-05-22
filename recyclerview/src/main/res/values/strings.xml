@@ -1,0 +1,7 @@
+<resources>
+    <string name="vertical_rv_explain">RecyclerView is a more advanced and flexible version of ListView.\n\nRecyclerView fills itself with views provided by a layout manager. The standard layout managers are LinearLayoutManager, GridLayoutManager, StaggeredGridLayoutManager, or implement your own.\n\nThe views are represented by view holder objects that in charge of display data. View holder objects are managed by an adapter. The adapter creates view holders and binds view holders to their data by calling onBindViewHolder().</string>
+    <string name="green_check">Green check</string>
+    <string name="cheveron_right">Cheveron right</string>
+    <string name="basic_rv_explain">Below is a basic recycler view that is displaying a list of items. Select any of the below items to see more on what a recycler view can do.</string>
+
+</resources>

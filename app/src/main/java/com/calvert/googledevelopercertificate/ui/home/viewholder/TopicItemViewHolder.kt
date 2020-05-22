@@ -5,7 +5,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.googledevelopercertificate.R
-import com.calvert.googledevelopercertificate.shared.dto.TopicObject
+import com.calvert.googledevelopercertificate.dto.TopicObject
 import com.calvert.googledevelopercertificate.ui.home.adapter.TopicButtonItemAdapter
 
 class TopicItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

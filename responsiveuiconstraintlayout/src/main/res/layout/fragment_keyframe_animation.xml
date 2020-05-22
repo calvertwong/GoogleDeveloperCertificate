@@ -5,6 +5,8 @@
     android:id="@+id/cl_keyframe_layout_"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/default_horizontal_margin"
+    android:layout_marginEnd="@dimen/default_horizontal_margin"
     tools:context=".keyframeanimation.KeyframeAnimationFragment">
 
     <TextView

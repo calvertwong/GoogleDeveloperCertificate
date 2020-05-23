@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.selection.SelectionPredicates
 import androidx.recyclerview.selection.SelectionTracker
@@ -42,7 +43,7 @@ class ListSelectionRecyclerViewFragment : Fragment() {
             addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         }
 
-        tracker = SelectionTracker.Builder<Long>(
+        tracker = SelectionTracker.Builder(
             "userSelection",
             binding.rvVertical,
             StableIdKeyProvider(binding.rvVertical),
@@ -52,18 +53,30 @@ class ListSelectionRecyclerViewFragment : Fragment() {
             SelectionPredicates.createSelectAnything()
         ).build()
 
+        // some handlers
         tracker?.addObserver(
             object : SelectionTracker.SelectionObserver<Long>() {
+                var selectedItemSize: Int? = 0
+
                 override fun onSelectionChanged() {
                     super.onSelectionChanged()
-                    val itemSize: Int? = tracker?.selection?.size()
-                    println("Click   ${itemSize}")
+                    selectedItemSize = tracker?.selection?.size()
                 }
 
                 override fun onItemStateChanged(key: Long, selected: Boolean) {
                     super.onItemStateChanged(key, selected)
                     if (selected) {
-                        println("Item Clicked   ${MOCK_DATA_LIST[key.toInt()]}")
+                        Toast.makeText(
+                            requireContext(), "Selected item ${MOCK_DATA_LIST[key.toInt()].name}." +
+                                "\n\nTotal selected item: ${selectedItemSize?.plus(1)}",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            requireContext(), "Deselected item ${MOCK_DATA_LIST[key.toInt()].name}." +
+                                "\n\nTotal selected item: ${selectedItemSize?.minus(1)}",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                 }
             }

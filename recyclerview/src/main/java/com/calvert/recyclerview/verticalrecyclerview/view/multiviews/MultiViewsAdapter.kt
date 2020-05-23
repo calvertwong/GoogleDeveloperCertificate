@@ -33,8 +33,9 @@ class MultiViewsAdapter(private val mockDataList: List<MockDataObject>) : Recycl
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is WhiteViewHolder) {
-            holder.bindView(mockDataList[position])
+        when (holder) {
+            is WhiteViewHolder -> holder.bindView(mockDataList[position])
+            is GreenViewHolder -> holder.bindView(mockDataList[position])
         }
     }
 }

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.calvert.mockdata.MOCK_DATA_LIST
@@ -15,8 +14,6 @@ class AnimateAlwaysRecyclerViewFragment : Fragment() {
 
     private var _binding: FragmentAnimateAlwaysRecyclerViewBinding? = null
     private val binding get() = _binding!!
-
-    private var tracker: SelectionTracker<Long>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

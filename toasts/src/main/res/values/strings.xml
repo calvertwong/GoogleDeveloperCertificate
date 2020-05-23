@@ -12,7 +12,6 @@
     <string name="bottom_right_toast">Bottom right Toast.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="click_here_to_show_a_custom_toast">Click here to show a custom Toast.</string>
     <string name="front_alert_icon">Front alert icon!</string>
     <string name="end_alert_icon">End alert icon!</string>

@@ -10,7 +10,7 @@ class AnimateOnceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
 
     fun bindView(mockDataObject: MockDataObject) {
         with(binding) {
-            tvId.text = mockDataObject.id.toString()
+            tvUserId.text = mockDataObject.id.toString()
             tvName.text = mockDataObject.name
             tvUsername.text = mockDataObject.username
             tvEmail.text = mockDataObject.email

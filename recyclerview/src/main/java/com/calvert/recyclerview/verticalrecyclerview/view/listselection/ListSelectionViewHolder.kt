@@ -12,7 +12,7 @@ class ListSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
 
     fun bindView(mockDataObject: MockDataObject, isActivated: Boolean = false) {
         with(binding) {
-            tvId.text = mockDataObject.id.toString()
+            tvUserId.text = mockDataObject.id.toString()
             tvName.text = mockDataObject.name
             tvUsername.text = mockDataObject.username
             tvEmail.text = mockDataObject.email
@@ -24,10 +24,6 @@ class ListSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
         } else {
             binding.ivCheckmark.setImageResource(0)
         }
-    }
-
-    fun clearAnimation() {
-        binding.root.clearAnimation()
     }
 
     fun getItem(): ItemDetailsLookup.ItemDetails<Long>? =

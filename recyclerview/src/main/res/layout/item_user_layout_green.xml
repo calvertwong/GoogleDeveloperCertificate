@@ -9,61 +9,52 @@
         android:id="@+id/cl_user_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/selected_item_background_default_green"
+        android:background="@android:color/holo_green_light"
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/tv_user_id"
+            android:id="@+id/tv_user_id_green"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="1" />
 
         <TextView
-            android:id="@+id/tv_id"
+            android:id="@+id/tv_name_green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="1" />
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_id"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_id_green"
             tools:text="Name" />
 
         <TextView
-            android:id="@+id/tv_username"
+            android:id="@+id/tv_username_green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_green"
             tools:text="Username" />
 
         <TextView
-            android:id="@+id/tv_email"
+            android:id="@+id/tv_email_green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_username"
+            app:layout_constraintTop_toBottomOf="@+id/tv_username_green"
             tools:text="1email@email.com" />
 
         <TextView
-            android:id="@+id/tv_hobby"
+            android:id="@+id/tv_hobby_green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_email"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email_green"
             tools:text="Fly" />
 
         <ImageView
-            android:id="@+id/iv_checkmark"
+            android:id="@+id/iv_checkmark_green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/green_check"

@@ -9,12 +9,4 @@
     <string name="Barrier">Barrier</string>
     <string name="chain">Chain</string>
     <string name="keyframe_animation">Keyframe Animation</string>
-    <string name="vertical_recyclerview">Vertical RecyclerView</string>
-    <string name="horizontal_recyclerview">Horizontal RecyclerView</string>
-    <string name="normal">Normal</string>
-    <string name="vertical">Vertical</string>
-    <string name="multi_views">Multi Views</string>
-    <string name="animate_always">Animate Always</string>
-    <string name="animateonce">Animate Once</string>
-    <string name="list_selection">List Selection</string>
 </resources>

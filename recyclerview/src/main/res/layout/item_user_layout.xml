@@ -16,16 +16,7 @@
             android:id="@+id/tv_user_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="1" />
-
-        <TextView
-            android:id="@+id/tv_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="1" />
@@ -35,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_id"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_id"
             tools:text="Name" />
 
         <TextView

@@ -10,11 +10,11 @@ class GreenViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun bindView(mockDataObject: MockDataObject) {
         with(binding) {
-            tvId.text = mockDataObject.id.toString()
-            tvName.text = mockDataObject.name
-            tvUsername.text = mockDataObject.username
-            tvEmail.text = mockDataObject.email
-            tvHobby.text = mockDataObject.hobby
+            tvUserIdGreen.text = mockDataObject.id.toString()
+            tvNameGreen.text = mockDataObject.name
+            tvUsernameGreen.text = mockDataObject.username
+            tvEmailGreen.text = mockDataObject.email
+            tvHobbyGreen.text = mockDataObject.hobby
         }
     }
 }

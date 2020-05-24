@@ -1,4 +1,4 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.animatealways
+package com.calvert.recyclerview.verticalrecyclerview.animatealways.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.mockdata.MockDataObject
 import com.calvert.recyclerview.R
+import com.calvert.recyclerview.verticalrecyclerview.animatealways.viewholder.AnimateAlwaysViewHolder
 
 class AnimateAlwaysAdapter(private val mockDataList: List<MockDataObject>) : RecyclerView.Adapter<RecyclerView
 .ViewHolder>() {

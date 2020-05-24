@@ -1,11 +1,11 @@
-package com.calvert.recyclerview.horizontalrecyclerview
+package com.calvert.recyclerview.verticalrecyclerview.animateonce.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.mockdata.MockDataObject
 import com.calvert.recyclerview.databinding.ItemUserLayoutBinding
 
-class HorizontalViewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class AnimateOnceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val binding: ItemUserLayoutBinding = ItemUserLayoutBinding.bind(itemView)
 
     fun bindView(mockDataObject: MockDataObject) {
@@ -16,5 +16,9 @@ class HorizontalViewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             tvEmail.text = mockDataObject.email
             tvHobby.text = mockDataObject.hobby
         }
+    }
+
+    fun clearAnimation() {
+        binding.root.clearAnimation()
     }
 }

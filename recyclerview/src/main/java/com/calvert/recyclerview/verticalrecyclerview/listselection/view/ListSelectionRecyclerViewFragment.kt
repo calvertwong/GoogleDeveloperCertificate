@@ -1,4 +1,4 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.listselection
+package com.calvert.recyclerview.verticalrecyclerview.listselection.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.calvert.mockdata.MOCK_DATA_LIST
 import com.calvert.recyclerview.databinding.FragmentListSelectionRecyclerViewBinding
+import com.calvert.recyclerview.verticalrecyclerview.listselection.CustomItemLookup
+import com.calvert.recyclerview.verticalrecyclerview.listselection.adapter.ListSelectionAdapter
 
 class ListSelectionRecyclerViewFragment : Fragment() {
 
@@ -34,7 +36,8 @@ class ListSelectionRecyclerViewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val rvLayoutManager = LinearLayoutManager(requireContext())
-        val rvAdapter = ListSelectionAdapter(MOCK_DATA_LIST)
+        val rvAdapter =
+            ListSelectionAdapter(MOCK_DATA_LIST)
 
         binding.rvVertical.apply {
             layoutManager = rvLayoutManager

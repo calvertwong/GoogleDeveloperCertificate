@@ -5,19 +5,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.calvert.recyclerview.R
+import androidx.recyclerview.widget.GridLayoutManager
+import com.calvert.mockdata.MOCK_DATA_LIST
+import com.calvert.recyclerview.databinding.FragmentGridRecyclerViewBinding
 
-/**
- * A simple [Fragment] subclass.
- */
 class GridRecyclerViewFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_grid_recycler_view, container, false)
+    private var _binding: FragmentGridRecyclerViewBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        _binding = FragmentGridRecyclerViewBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val rvAdapter = GridAdapter(MOCK_DATA_LIST)
+        val rvLayoutManager = GridLayoutManager(requireContext(), 2)
+
+        binding.rvGrid.apply {
+            adapter = rvAdapter
+            layoutManager = rvLayoutManager
+        }
     }
 
 }

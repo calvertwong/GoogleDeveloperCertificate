@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_vertical_landingpage_recyclerview"
-        android:name="com.calvert.recyclerview.verticalrecyclerview.view.landingpage.LandingPageRecyclerViewFragment"
+        android:name="com.calvert.recyclerview.verticalrecyclerview.landingpage.view.LandingPageRecyclerViewFragment"
         android:label="@string/vertical"
         tools:layout="@layout/fragment_landingpage_recycler_view">
 
@@ -38,25 +38,25 @@
 
     <fragment
         android:id="@+id/navigation_vertical_animate_always_recyclerview"
-        android:name="com.calvert.recyclerview.verticalrecyclerview.view.animatealways.AnimateAlwaysRecyclerViewFragment"
+        android:name="com.calvert.recyclerview.verticalrecyclerview.animatealways.view.AnimateAlwaysRecyclerViewFragment"
         android:label="@string/animate_always"
         tools:layout="@layout/fragment_animate_always_recycler_view" />
 
     <fragment
         android:id="@+id/navigation_vertical_animate_once_recyclerview"
-        android:name="com.calvert.recyclerview.verticalrecyclerview.view.animateonce.AnimateOnceRecyclerViewFragment"
+        android:name="com.calvert.recyclerview.verticalrecyclerview.animateonce.view.AnimateOnceRecyclerViewFragment"
         android:label="@string/animateonce"
         tools:layout="@layout/fragment_animate_once_recycler_view" />
 
     <fragment
         android:id="@+id/navigation_vertical_list_selection_recyclerview"
-        android:name="com.calvert.recyclerview.verticalrecyclerview.view.listselection.ListSelectionRecyclerViewFragment"
+        android:name="com.calvert.recyclerview.verticalrecyclerview.listselection.view.ListSelectionRecyclerViewFragment"
         android:label="@string/list_selection"
         tools:layout="@layout/fragment_list_selection_recycler_view" />
 
     <fragment
         android:id="@+id/navigation_vertical_multi_views_recyclerview"
-        android:name="com.calvert.recyclerview.verticalrecyclerview.view.multiviews.MultiViewsRecyclerViewFragent"
+        android:name="com.calvert.recyclerview.verticalrecyclerview.multiviews.view.MultiViewsRecyclerViewFragent"
         android:label="@string/multi_views"
         tools:layout="@layout/fragment_multi_views_recycler_view" />
 

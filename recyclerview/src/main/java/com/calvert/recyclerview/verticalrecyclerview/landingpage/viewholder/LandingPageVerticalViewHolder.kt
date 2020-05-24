@@ -1,4 +1,4 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.landingpage
+package com.calvert.recyclerview.verticalrecyclerview.landingpage.viewholder
 
 import android.view.View
 import androidx.navigation.Navigation

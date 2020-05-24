@@ -1,4 +1,4 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.animatealways
+package com.calvert.recyclerview.verticalrecyclerview.multiviews.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,18 +8,19 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.calvert.mockdata.MOCK_DATA_LIST
-import com.calvert.recyclerview.databinding.FragmentAnimateAlwaysRecyclerViewBinding
+import com.calvert.recyclerview.databinding.FragmentMultiViewsRecyclerViewBinding
+import com.calvert.recyclerview.verticalrecyclerview.multiviews.adapter.MultiViewsAdapter
 
-class AnimateAlwaysRecyclerViewFragment : Fragment() {
+class MultiViewsRecyclerViewFragent : Fragment() {
 
-    private var _binding: FragmentAnimateAlwaysRecyclerViewBinding? = null
-    private val binding: FragmentAnimateAlwaysRecyclerViewBinding get() = _binding!!
+    private var _binding: FragmentMultiViewsRecyclerViewBinding? = null
+    private val binding: FragmentMultiViewsRecyclerViewBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAnimateAlwaysRecyclerViewBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentMultiViewsRecyclerViewBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -27,11 +28,12 @@ class AnimateAlwaysRecyclerViewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val rvLayoutManager = LinearLayoutManager(requireContext())
-        val rvAdapter = AnimateAlwaysAdapter(MOCK_DATA_LIST)
+        val rvAdapter = MultiViewsAdapter(MOCK_DATA_LIST)
 
-        binding.rvAnimateAlways.apply {
+        binding.rvDifferentViews.apply {
             layoutManager = rvLayoutManager
             adapter = rvAdapter
+            // add divider
             addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         }
     }
@@ -40,5 +42,4 @@ class AnimateAlwaysRecyclerViewFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

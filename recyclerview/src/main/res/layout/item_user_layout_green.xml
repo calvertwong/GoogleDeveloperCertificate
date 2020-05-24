@@ -23,7 +23,7 @@
 
         <TextView
             android:id="@+id/tv_name_green"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_user_id_green"
@@ -31,7 +31,7 @@
 
         <TextView
             android:id="@+id/tv_username_green"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_name_green"
@@ -39,7 +39,7 @@
 
         <TextView
             android:id="@+id/tv_email_green"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_username_green"
@@ -47,7 +47,7 @@
 
         <TextView
             android:id="@+id/tv_hobby_green"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_email_green"

@@ -1,4 +1,4 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.multiviews
+package com.calvert.recyclerview.verticalrecyclerview.multiviews.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

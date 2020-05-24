@@ -1,10 +1,12 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.multiviews
+package com.calvert.recyclerview.verticalrecyclerview.multiviews.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.mockdata.MockDataObject
 import com.calvert.recyclerview.R
+import com.calvert.recyclerview.verticalrecyclerview.multiviews.viewholder.GreenViewHolder
+import com.calvert.recyclerview.verticalrecyclerview.multiviews.viewholder.WhiteViewHolder
 
 class MultiViewsAdapter(private val mockDataList: List<MockDataObject>) : RecyclerView.Adapter<RecyclerView
 .ViewHolder>() {

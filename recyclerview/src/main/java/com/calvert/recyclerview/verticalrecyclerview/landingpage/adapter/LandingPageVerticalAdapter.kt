@@ -1,4 +1,4 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.landingpage
+package com.calvert.recyclerview.verticalrecyclerview.landingpage.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.recyclerview.R
 import com.calvert.recyclerview.dto.RvItemObject
+import com.calvert.recyclerview.verticalrecyclerview.landingpage.viewholder.LandingPageVerticalViewHolder
 
 class LandingPageVerticalAdapter(private val rvItemList: List<RvItemObject>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

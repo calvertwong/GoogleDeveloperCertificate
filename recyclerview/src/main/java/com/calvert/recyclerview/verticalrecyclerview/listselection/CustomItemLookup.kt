@@ -1,9 +1,10 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.listselection
+package com.calvert.recyclerview.verticalrecyclerview.listselection
 
 import android.view.MotionEvent
 import android.view.View
 import androidx.recyclerview.selection.ItemDetailsLookup
 import androidx.recyclerview.widget.RecyclerView
+import com.calvert.recyclerview.verticalrecyclerview.listselection.viewholder.ListSelectionViewHolder
 
 class CustomItemLookup(private val recyclerView: RecyclerView) : ItemDetailsLookup<Long>() {
     override fun getItemDetails(e: MotionEvent): ItemDetails<Long>? {

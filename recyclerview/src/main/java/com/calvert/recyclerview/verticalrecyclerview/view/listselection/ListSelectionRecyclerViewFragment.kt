@@ -18,7 +18,7 @@ import com.calvert.recyclerview.databinding.FragmentListSelectionRecyclerViewBin
 class ListSelectionRecyclerViewFragment : Fragment() {
 
     private var _binding: FragmentListSelectionRecyclerViewBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentListSelectionRecyclerViewBinding get() = _binding!!
 
     private var tracker: SelectionTracker<Long>? = null
 

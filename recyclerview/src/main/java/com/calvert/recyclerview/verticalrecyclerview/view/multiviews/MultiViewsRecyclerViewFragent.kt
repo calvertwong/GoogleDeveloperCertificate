@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.calvert.mockdata.MOCK_DATA_LIST
 import com.calvert.recyclerview.databinding.FragmentMultiViewsRecyclerViewBinding
 
-class MultiViewsRecyclerView : Fragment() {
+class MultiViewsRecyclerViewFragent : Fragment() {
 
     private var _binding: FragmentMultiViewsRecyclerViewBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentMultiViewsRecyclerViewBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

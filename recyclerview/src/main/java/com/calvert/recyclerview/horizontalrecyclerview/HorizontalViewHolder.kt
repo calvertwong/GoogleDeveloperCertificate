@@ -1,11 +1,11 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.animatealways
+package com.calvert.recyclerview.horizontalrecyclerview
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.mockdata.MockDataObject
 import com.calvert.recyclerview.databinding.ItemUserLayoutBinding
 
-class AnimateAlwaysViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class HorizontalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val binding: ItemUserLayoutBinding = ItemUserLayoutBinding.bind(itemView)
 
     fun bindView(mockDataObject: MockDataObject) {
@@ -17,9 +17,4 @@ class AnimateAlwaysViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
             tvHobby.text = mockDataObject.hobby
         }
     }
-
-    fun clearAnimation() {
-        binding.root.clearAnimation()
-    }
-
 }

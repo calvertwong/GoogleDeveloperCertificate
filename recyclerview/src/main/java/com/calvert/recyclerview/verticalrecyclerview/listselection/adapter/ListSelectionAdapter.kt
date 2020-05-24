@@ -1,4 +1,4 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.listselection
+package com.calvert.recyclerview.verticalrecyclerview.listselection.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.mockdata.MockDataObject
 import com.calvert.recyclerview.R
+import com.calvert.recyclerview.verticalrecyclerview.listselection.viewholder.ListSelectionViewHolder
 
 class ListSelectionAdapter(private val mockDataList: List<MockDataObject>) : RecyclerView.Adapter<RecyclerView
 .ViewHolder>() {

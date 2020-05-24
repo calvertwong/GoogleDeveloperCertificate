@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/default_vertical_margin"
     android:layout_marginBottom="@dimen/default_vertical_margin"
-    tools:context=".verticalrecyclerview.view.landingpage.LandingPageRecyclerViewFragment">
+    tools:context=".verticalrecyclerview.landingpage.view.LandingPageRecyclerViewFragment">
 
     <TextView
         android:id="@+id/tv_basic_rv_explain"

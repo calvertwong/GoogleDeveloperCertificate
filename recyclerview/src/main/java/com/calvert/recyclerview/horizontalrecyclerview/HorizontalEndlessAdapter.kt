@@ -12,7 +12,7 @@ class HorizontalEndlessAdapter(private val mockDataList: List<MockDataObject>) :
     lateinit var context: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         context = parent.context
-        return HorizontalViewholder(
+        return HorizontalViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.item_user_layout, parent, false)
         )
     }
@@ -20,7 +20,7 @@ class HorizontalEndlessAdapter(private val mockDataList: List<MockDataObject>) :
     override fun getItemCount(): Int = Integer.MAX_VALUE
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is HorizontalViewholder) {
+        if (holder is HorizontalViewHolder) {
             holder.bindView(mockDataList[position % mockDataList.size])
         }
     }

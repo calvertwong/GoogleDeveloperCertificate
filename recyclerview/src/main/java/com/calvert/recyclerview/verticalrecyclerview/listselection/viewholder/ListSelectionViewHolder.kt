@@ -1,4 +1,4 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.listselection
+package com.calvert.recyclerview.verticalrecyclerview.listselection.viewholder
 
 import android.view.View
 import androidx.recyclerview.selection.ItemDetailsLookup

@@ -1,4 +1,4 @@
-package com.calvert.recyclerview.verticalrecyclerview.view.multiviews
+package com.calvert.recyclerview.verticalrecyclerview.landingpage.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,19 +7,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.calvert.mockdata.MOCK_DATA_LIST
-import com.calvert.recyclerview.databinding.FragmentMultiViewsRecyclerViewBinding
+import com.calvert.recyclerview.databinding.FragmentLandingpageRecyclerViewBinding
+import com.calvert.recyclerview.dto.RV_ITEMS_LIST
+import com.calvert.recyclerview.verticalrecyclerview.landingpage.adapter.LandingPageVerticalAdapter
 
-class MultiViewsRecyclerViewFragent : Fragment() {
+class LandingPageRecyclerViewFragment : Fragment() {
 
-    private var _binding: FragmentMultiViewsRecyclerViewBinding? = null
-    private val binding: FragmentMultiViewsRecyclerViewBinding get() = _binding!!
+    private var _binding: FragmentLandingpageRecyclerViewBinding? = null
+    private val binding: FragmentLandingpageRecyclerViewBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMultiViewsRecyclerViewBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentLandingpageRecyclerViewBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -27,9 +28,10 @@ class MultiViewsRecyclerViewFragent : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val rvLayoutManager = LinearLayoutManager(requireContext())
-        val rvAdapter = MultiViewsAdapter(MOCK_DATA_LIST)
+        val rvAdapter =
+            LandingPageVerticalAdapter(RV_ITEMS_LIST)
 
-        binding.rvDifferentViews.apply {
+        binding.rvBasic.apply {
             layoutManager = rvLayoutManager
             adapter = rvAdapter
             // add divider
@@ -41,4 +43,5 @@ class MultiViewsRecyclerViewFragent : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

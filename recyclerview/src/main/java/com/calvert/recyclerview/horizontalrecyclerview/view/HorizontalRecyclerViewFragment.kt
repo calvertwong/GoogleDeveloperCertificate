@@ -1,4 +1,4 @@
-package com.calvert.recyclerview.horizontalrecyclerview
+package com.calvert.recyclerview.horizontalrecyclerview.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.calvert.mockdata.MOCK_DATA_LIST
 import com.calvert.recyclerview.databinding.FragmentHorizontalRecyclerViewBinding
+import com.calvert.recyclerview.horizontalrecyclerview.adapter.HorizontalAdapter
+import com.calvert.recyclerview.horizontalrecyclerview.adapter.HorizontalEndlessAdapter
 
 class HorizontalRecyclerViewFragment : Fragment() {
 

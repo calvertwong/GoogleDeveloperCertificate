@@ -143,19 +143,19 @@
 
     <fragment
         android:id="@+id/navigation_horizontal_recyclerview"
-        android:name="com.calvert.recyclerview.horizontalrecyclerview.HorizontalRecyclerViewFragment"
+        android:name="com.calvert.recyclerview.horizontalrecyclerview.view.HorizontalRecyclerViewFragment"
         android:label="@string/horizontal"
         tools:layout="@layout/fragment_horizontal_recycler_view" />
 
     <fragment
         android:id="@+id/navigation_grid_recyclerview"
-        android:name="com.calvert.recyclerview.gridrecyclerview.GridRecyclerViewFragment"
+        android:name="com.calvert.recyclerview.gridrecyclerview.view.GridRecyclerViewFragment"
         android:label="@string/grid"
         tools:layout="@layout/fragment_grid_recycler_view" />
 
     <fragment
         android:id="@+id/navigation_staggered_grid_recyclerview"
-        android:name="com.calvert.recyclerview.staggeredrecyclerview.StaggeredGridRecyclerView"
+        android:name="com.calvert.recyclerview.staggeredrecyclerview.view.StaggeredGridRecyclerViewFragment"
         android:label="@string/staggered_grid"
         tools:layout="@layout/fragment_staggered_grid_recycler_view" />
 </navigation>

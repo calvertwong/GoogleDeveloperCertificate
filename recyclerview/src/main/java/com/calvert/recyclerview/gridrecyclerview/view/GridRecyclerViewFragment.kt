@@ -1,4 +1,4 @@
-package com.calvert.recyclerview.gridrecyclerview
+package com.calvert.recyclerview.gridrecyclerview.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.calvert.mockdata.MOCK_DATA_LIST
 import com.calvert.recyclerview.databinding.FragmentGridRecyclerViewBinding
+import com.calvert.recyclerview.gridrecyclerview.adapter.GridAdapter
 
 class GridRecyclerViewFragment : Fragment() {
 

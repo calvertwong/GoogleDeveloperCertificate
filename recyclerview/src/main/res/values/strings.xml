@@ -25,4 +25,5 @@
     <string name="staggered_grid">Staggered Grid</string>
     <string name="horizontal">Horizontal</string>
     <string name="vertical">Vertical</string>
+    <string name="sample_image">Sample image</string>
 </resources>

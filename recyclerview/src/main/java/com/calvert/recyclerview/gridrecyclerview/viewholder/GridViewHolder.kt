@@ -1,11 +1,11 @@
-package com.calvert.recyclerview.gridrecyclerview
+package com.calvert.recyclerview.gridrecyclerview.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.mockdata.MockDataObject
 import com.calvert.recyclerview.databinding.ItemUserLayoutBinding
 
-class GridViewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class GridViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val binding: ItemUserLayoutBinding = ItemUserLayoutBinding.bind(itemView)
 
     fun bindView(mockDataObject: MockDataObject) {

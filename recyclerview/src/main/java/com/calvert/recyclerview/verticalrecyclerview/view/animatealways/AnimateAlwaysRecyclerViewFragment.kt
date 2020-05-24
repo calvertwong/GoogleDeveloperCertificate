@@ -13,7 +13,7 @@ import com.calvert.recyclerview.databinding.FragmentAnimateAlwaysRecyclerViewBin
 class AnimateAlwaysRecyclerViewFragment : Fragment() {
 
     private var _binding: FragmentAnimateAlwaysRecyclerViewBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentAnimateAlwaysRecyclerViewBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

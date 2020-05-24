@@ -8,12 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.calvert.recyclerview.databinding.FragmentLandingpageRecyclerViewBinding
-import com.calvert.recyclerview.verticalrecyclerview.dto.VERTICAL_ITEMS_LIST
+import com.calvert.recyclerview.dto.RV_ITEMS_LIST
 
 class LandingPageRecyclerViewFragment : Fragment() {
 
     private var _binding: FragmentLandingpageRecyclerViewBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentLandingpageRecyclerViewBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +27,7 @@ class LandingPageRecyclerViewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val rvLayoutManager = LinearLayoutManager(requireContext())
-        val rvAdapter = LandingPageVerticalAdapter(VERTICAL_ITEMS_LIST)
+        val rvAdapter = LandingPageVerticalAdapter(RV_ITEMS_LIST)
 
         binding.rvBasic.apply {
             layoutManager = rvLayoutManager

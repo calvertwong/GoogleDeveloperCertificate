@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rv_internal_navigation"
+    app:startDestination="@+id/navigation_vertical_landingpage_recyclerview">
+
+    <fragment
+        android:id="@+id/navigation_vertical_landingpage_recyclerview"
+        android:name="com.calvert.recyclerview.verticalrecyclerview.view.landingpage.LandingPageRecyclerViewFragment"
+        android:label="@string/vertical"
+        tools:layout="@layout/fragment_landingpage_recycler_view">
+
+        <action
+            android:id="@+id/action_goto_animate_always_recyclerview"
+            app:destination="@+id/navigation_vertical_animate_always_recyclerview"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_animate_once_recyclerview"
+            app:destination="@+id/navigation_vertical_animate_once_recyclerview"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_list_selection_recyclerview"
+            app:destination="@+id/navigation_vertical_list_selection_recyclerview"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_multi_views_recyclerview"
+            app:destination="@+id/navigation_vertical_multi_views_recyclerview"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_vertical_animate_always_recyclerview"
+        android:name="com.calvert.recyclerview.verticalrecyclerview.view.animatealways.AnimateAlwaysRecyclerViewFragment"
+        android:label="@string/animate_always"
+        tools:layout="@layout/fragment_animate_always_recycler_view" />
+
+    <fragment
+        android:id="@+id/navigation_vertical_animate_once_recyclerview"
+        android:name="com.calvert.recyclerview.verticalrecyclerview.view.animateonce.AnimateOnceRecyclerViewFragment"
+        android:label="@string/animateonce"
+        tools:layout="@layout/fragment_animate_once_recycler_view" />
+
+    <fragment
+        android:id="@+id/navigation_vertical_list_selection_recyclerview"
+        android:name="com.calvert.recyclerview.verticalrecyclerview.view.listselection.ListSelectionRecyclerViewFragment"
+        android:label="@string/list_selection"
+        tools:layout="@layout/fragment_list_selection_recycler_view" />
+
+    <fragment
+        android:id="@+id/navigation_vertical_multi_views_recyclerview"
+        android:name="com.calvert.recyclerview.verticalrecyclerview.view.multiviews.MultiViewsRecyclerViewFragent"
+        android:label="@string/multi_views"
+        tools:layout="@layout/fragment_multi_views_recycler_view" />
+
+</navigation>

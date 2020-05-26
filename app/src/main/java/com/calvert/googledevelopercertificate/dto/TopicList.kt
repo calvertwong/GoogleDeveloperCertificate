@@ -37,5 +37,13 @@ val TOPIC_LIST: List<TopicObject> = listOf(
             R.id.action_goto_grid_recyclerview,
             R.id.action_goto_staggered_grid_recyclerview
         )
+    ),
+    TopicObject(
+        "Custom View",
+        listOf("Speed Controller", "Light Bulb"),
+        listOf(
+            R.id.action_goto_custom_view_speed_controller,
+            R.id.action_goto_custom_view_light_bulb
+        )
     )
 )

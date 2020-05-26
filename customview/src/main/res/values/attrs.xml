@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SpeedKnob">
+        <attr name="fanColor1" format="color" />
+        <attr name="fanColor2" format="color" />
+        <attr name="fanColor3" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="LightBulb">
+        <attr name="dimColor" format="color" />
+        <attr name="brightColor" format="color" />
+    </declare-styleable>
+</resources>

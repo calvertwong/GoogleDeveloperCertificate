@@ -88,6 +88,18 @@
             app:destination="@+id/navigation_staggered_grid_recyclerview"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_custom_view_speed_controller"
+            app:destination="@+id/navigation_custom_view_speed_controller"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_custom_view_light_bulb"
+            app:destination="@+id/navigation_custom_view_light_bulb"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
 
     <!--Including nav graph from another module-->
@@ -158,4 +170,16 @@
         android:name="com.calvert.recyclerview.staggeredrecyclerview.view.StaggeredGridRecyclerViewFragment"
         android:label="@string/staggered_grid"
         tools:layout="@layout/fragment_staggered_grid_recycler_view" />
+
+    <fragment
+        android:id="@+id/navigation_custom_view_speed_controller"
+        android:name="com.calvert.customview.speedknob.view.SpeedControllerFragment"
+        android:label="Speed Controller"
+        tools:layout="@layout/fragment_speed_controller" />
+
+    <fragment
+        android:id="@+id/navigation_custom_view_light_bulb"
+        android:name="com.calvert.customview.lightbulb.view.LightBulbFragment"
+        android:label="Light Bulb"
+        tools:layout="@layout/fragment_light_bulb" />
 </navigation>

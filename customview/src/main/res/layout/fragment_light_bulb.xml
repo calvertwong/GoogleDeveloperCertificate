@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/default_horizontal_margin"
+    android:layout_marginVertical="@dimen/default_vertical_margin"
+    tools:context=".lightbulb.view.LightBulbFragment">
+
+    <TextView
+        android:id="@+id/tv_light_bulb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/light_bulb_explain"
+        app:layout_constraintBottom_toTopOf="@+id/iv_light_bulb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.calvert.customview.lightbulb.LightBulb
+        android:id="@+id/iv_light_bulb"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/light_bulb"
+        app:brightColor="@color/bright_yellow"
+        app:dimColor="@color/dim_yellow"
+        app:layout_constraintBottom_toTopOf="@+id/btn_read_bulb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_light_bulb" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_read_bulb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/status"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

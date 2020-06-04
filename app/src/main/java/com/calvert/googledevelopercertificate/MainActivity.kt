@@ -1,9 +1,13 @@
 package com.calvert.googledevelopercertificate
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.calvert.googledevelopercertificate.databinding.ActivityMainBinding
 
@@ -15,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // this is required for menu
+        setSupportActionBar(binding.toolbar)
 
         // Keeps track of the current position of the graph and swaps destinations.
         // NavController needs to be told the path we want to go.
@@ -30,5 +37,22 @@ class MainActivity : AppCompatActivity() {
         )
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
+        // this line is required so that the action bar title matches with the fragment label
+        setupActionBarWithNavController(navController)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_activity -> {
+                Toast.makeText(this, "Activity Menu", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

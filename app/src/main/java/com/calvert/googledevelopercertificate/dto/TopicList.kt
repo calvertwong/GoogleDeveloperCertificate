@@ -45,5 +45,12 @@ val TOPIC_LIST: List<TopicObject> = listOf(
             R.id.action_goto_custom_view_speed_controller,
             R.id.action_goto_custom_view_light_bulb
         )
+    ),
+    TopicObject(
+        "Menu",
+        listOf("Right Menu"),
+        listOf(
+            R.id.action_goto_top_right_menu
+        )
     )
 )

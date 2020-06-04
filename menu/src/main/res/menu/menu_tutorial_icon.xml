@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_cart"
+        android:icon="@drawable/ic_baseline_add_shopping_cart_24"
+        android:orderInCategory="10"
+        android:title="@string/cart"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_alarm"
+        android:icon="@drawable/ic_baseline_access_alarm_24"
+        android:orderInCategory="20"
+        android:title="@string/alarm"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_shuttle"
+        android:icon="@drawable/ic_baseline_airport_shuttle_24"
+        android:orderInCategory="100"
+        android:title="@string/shuttle"
+        app:showAsAction="never" />
+</menu>

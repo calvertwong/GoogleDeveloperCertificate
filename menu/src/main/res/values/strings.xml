@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="show_toast_alpha">Show toast alpha.</string>
+    <string name="show_toast_beta">Show toast beta.</string>
+    <string name="cart">Cart</string>
+    <string name="alarm">Alarm</string>
+    <string name="shuttle">Shuttle</string>
+    <string name="toggle_menu_between_text_and_icon_type">Toggle menu between text and icon type</string>
+</resources>

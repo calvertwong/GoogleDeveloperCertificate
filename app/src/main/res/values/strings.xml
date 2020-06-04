@@ -9,4 +9,5 @@
     <string name="Barrier">Barrier</string>
     <string name="chain">Chain</string>
     <string name="keyframe_animation">Keyframe Animation</string>
+    <string name="activity_menu">Activity Menu</string>
 </resources>

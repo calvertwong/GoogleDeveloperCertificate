@@ -100,6 +100,12 @@
             app:destination="@+id/navigation_custom_view_light_bulb"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_top_right_menu"
+            app:destination="@+id/navigation_menu_top_right_menu"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
 
     <!--Including nav graph from another module-->
@@ -182,4 +188,10 @@
         android:name="com.calvert.customview.lightbulb.view.LightBulbFragment"
         android:label="Light Bulb"
         tools:layout="@layout/fragment_light_bulb" />
+
+    <fragment
+        android:id="@+id/navigation_menu_top_right_menu"
+        android:name="com.calvert.menu.MenuFragment"
+        android:label="Right Menu"
+        tools:layout="@layout/fragment_menu" />
 </navigation>

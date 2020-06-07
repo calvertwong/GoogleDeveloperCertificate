@@ -106,6 +106,24 @@
             app:destination="@+id/navigation_menu_top_right_menu"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_dialogs_alert_dialogs"
+            app:destination="@+id/navigation_dialogs_alert_dialogs"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_dialogs_date_picker"
+            app:destination="@+id/navigation_dialogs_date_picker_dialog"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_dialogs_time_picker"
+            app:destination="@+id/navigation_dialogs_time_picker_dialog"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
 
     <!--Including nav graph from another module-->
@@ -194,4 +212,22 @@
         android:name="com.calvert.menu.MenuFragment"
         android:label="Right Menu"
         tools:layout="@layout/fragment_menu" />
+
+    <fragment
+        android:id="@+id/navigation_dialogs_alert_dialogs"
+        android:name="com.calvert.dialogs.alertdialog.AlertDialogDemoFragment"
+        android:label="Alert Dialogs"
+        tools:layout="@layout/fragment_alert_dialog_demo" />
+
+    <fragment
+        android:id="@+id/navigation_dialogs_date_picker_dialog"
+        android:name="com.calvert.dialogs.datapickerdialog.DatePickerDemoFragment"
+        android:label="Date Picker"
+        tools:layout="@layout/fragment_date_picker_demo" />
+
+    <fragment
+        android:id="@+id/navigation_dialogs_time_picker_dialog"
+        android:name="com.calvert.dialogs.timepickerdialog.TimePickerDemoFragment"
+        android:label="Time Picker"
+        tools:layout="@layout/fragment_time_picker_demo" />
 </navigation>

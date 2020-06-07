@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/default_horizontal_margin"
+    android:layout_marginTop="@dimen/default_vertical_margin"
+    android:layout_marginEnd="@dimen/default_horizontal_margin"
+    android:layout_marginBottom="@dimen/default_vertical_margin"
+    android:overScrollMode="never">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".alertdialog.AlertDialogDemoFragment">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_normal_dialog_positive_only"
+            style="@style/Common_Button_Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/positive_button"
+            app:layout_constraintBottom_toTopOf="@+id/btn_normal_dialog_negative_only"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_normal_dialog_negative_only"
+            style="@style/Common_Button_Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/negative_button"
+            app:layout_constraintBottom_toTopOf="@+id/btn_normal_dialog_neutral_only"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_normal_dialog_positive_only" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_normal_dialog_neutral_only"
+            style="@style/Common_Button_Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/neutral_button"
+            app:layout_constraintBottom_toTopOf="@+id/btn_normal_two_buttons_alert_dialog_only"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_normal_dialog_negative_only" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_normal_two_buttons_alert_dialog_only"
+            style="@style/Common_Button_Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/two_buttons"
+            app:layout_constraintBottom_toTopOf="@+id/btn_normal_dialog_all_buttons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_normal_dialog_neutral_only" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_normal_dialog_all_buttons"
+            style="@style/Common_Button_Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/three_buttons_not_cancellable"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_normal_two_buttons_alert_dialog_only" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

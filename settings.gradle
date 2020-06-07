@@ -1,3 +1,4 @@
+include ':dialogs'
 include ':menu'
 rootProject.name='GoogleDeveloperCertificate'
 include ':app'

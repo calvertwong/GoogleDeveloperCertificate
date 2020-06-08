@@ -1,0 +1,31 @@
+<resources>
+    <string name="green_check">Green check</string>
+    <string name="cheveron_right">Cheveron right</string>
+    <string name="basic_rv_explain">Below is a basic recycler view that is displaying a list of items. Select any of the below items to see more on
+        what a recycler view can do.</string>
+    <string name="multi_views">Multi Views</string>
+    <string name="animate_always">Animate Always</string>
+    <string name="animateonce">Animate Once</string>
+    <string name="list_selection">List Selection</string>
+    <string name="rv_horizontal_explain"><b>Default Horizontal Recycler View</b>\nBelow is a horizontal oriented recycler view that scrolls to the
+        right.</string>
+    <string name="rv_horizontal_reverse_explain"><b>Reversed Horizontal Recycler View</b>\nThe reversed horizontal recycler view scrolls to
+        the left.</string>
+    <string name="rv_horizontal_endless_circular_explain"><b>Endless Circular Horizontal Recycler View</b>\nThis endless circular recycler view
+        can be scrolled "endlessly". However, we are able to see the endless effect because we are using a large number as the view holder\'s
+        position.\n\nHere is an explanation that might help you understand, imagine your first item is at position (2<sup>31</sup> - 1 divide 2 =
+        1073741823) and you have scroll through 1073741823 times to reach 0<sup>th</sup> or (2<sup>31</sup> - 10) <sup>th</sup> position. This is
+        how a recycler view achieves the endless effect.
+    </string>
+    <string name="rv_horizontal_endless_direction_right_explain"><b>Endless Horizontal Recycler View (Right)</b>\nEndless scrolling to the right
+        .</string>
+    <string name="rv_horizontal_endless_direction_left_explain"><b>Endless Horizontal Recycler View (Left)</b>\nEndless scrolling to the left.
+    </string>
+    <string name="grid">Grid</string>
+    <string name="staggered_grid">Staggered Grid</string>
+    <string name="horizontal">Horizontal</string>
+    <string name="vertical">Vertical</string>
+    <string name="sample_image">Sample image</string>
+    <string name="rv_staggered_grid_explain">Staggered grid changes its layout dynamically depending on the data provided. This example is fetching
+        some random images with different sizes and notice that the grids are resizing based on the image sizes.</string>
+</resources>

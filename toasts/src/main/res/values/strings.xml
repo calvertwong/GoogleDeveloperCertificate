@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="click_here_to_show_a_basic_toast">Click here to show a basic Toast</string>
+    <string name="top_left_toast">Top left Toast.</string>
+    <string name="top_center_toast">Top Center Toast.</string>
+    <string name="top_right_toast">Top Right Toast.</string>
+    <string name="center_left_toast">Center left Toast.</string>
+    <string name="center_toast">Center Toast.</string>
+    <string name="center_right_toast">Center right Toast.</string>
+    <string name="bottom_left_toast">Bottom left Toast.</string>
+    <string name="bottom_center_toast">Bottom center Toast.</string>
+    <string name="bottom_right_toast">Bottom right Toast.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="click_here_to_show_a_custom_toast">Click here to show a custom Toast.</string>
+    <string name="front_alert_icon">Front alert icon!</string>
+    <string name="end_alert_icon">End alert icon!</string>
+    <string name="custom_toast_text">Custom toast text.</string>
+</resources>

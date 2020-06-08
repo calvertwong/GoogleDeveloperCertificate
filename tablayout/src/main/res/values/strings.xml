@@ -1,0 +1,7 @@
+<resources>
+    <string name="tab_one_explain">This tab layout is using the View Pager2\'s FragmentStateAdapter. If you are at the "Animated Tab Layout"
+        screen, scroll vertically. We can set the View Pager to scroll vertically or horizontally at the View Pager\'s orientation properties
+        .</string>
+    <string name="tab_two_explain">Isn\'t it cool?</string>
+    <string name="tab_three_explain">However this is just a simple example.</string>
+</resources>

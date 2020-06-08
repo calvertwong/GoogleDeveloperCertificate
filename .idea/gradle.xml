@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -10,6 +11,16 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/customview" />
+            <option value="$PROJECT_DIR$/dialogs" />
+            <option value="$PROJECT_DIR$/donate" />
+            <option value="$PROJECT_DIR$/menu" />
+            <option value="$PROJECT_DIR$/recyclerview" />
+            <option value="$PROJECT_DIR$/responsiveuiconstraintlayout" />
+            <option value="$PROJECT_DIR$/tablayout" />
+            <option value="$PROJECT_DIR$/toasts" />
+            <option value="$PROJECT_DIR$/viewbinding" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

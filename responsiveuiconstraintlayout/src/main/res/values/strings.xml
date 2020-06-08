@@ -1,0 +1,29 @@
+<resources>
+    <!--Barrier-->
+    <string name="right_button">Right button</string>
+    <string name="barrier_explain"><b>Barrier example</b>\n\nTap on the left buttons to change their width. You will see that the Right
+        button will be positioned after the longest left button.</string>
+    <string name="_30">30%</string>
+    <string name="_40">40%</string>
+    <string name="_45">45%</string>
+    <string name="_55">55%</string>
+
+    <!--Chain-->
+    <string name="spread_explain"><b>Spread</b>\nViews are evenly distributed.</string>
+    <string name="spread_inside_explain"><b>Spread inside</b>\nThe first and last view are fixed at the ends and the rest of the views are evenly
+        distributed.</string>
+    <string name="weighted_explain"><b>Weighted</b>\nViews are weighted. Higher weight value gets more space.</string>
+    <string name="packed_explain"><b>Packed</b>\nViews are packed together.</string>
+    <string name="head">Head</string>
+    <string name="body">Body</string>
+    <string name="tail">Tail</string>
+    <string name="weight_1">Weight 1</string>
+    <string name="weight_6">Weight 6</string>
+    <string name="weight_4">Weight 4</string>
+
+    <!--Keyframe animation-->
+    <string name="watch_me_moving_downwards">Watch me moving downwards.</string>
+    <string name="start">Start</string>
+    <string name="keyframe_animation_explain">ConstraintSet animations animate only the size and position of child elements. (Attributes such as color won\'t work)</string>
+    <string name="revert">Revert</string>
+</resources>

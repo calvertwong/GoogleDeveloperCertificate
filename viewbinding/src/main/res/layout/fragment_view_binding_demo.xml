@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--View binding can ignore a layout file. To do this, add this line at the root tag.-->
+<!--    tools:viewBindingIgnore="true" -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/default_horizontal_margin"
+    android:layout_marginEnd="@dimen/default_horizontal_margin"
+    tools:context=".ViewBindingDemoFragment">
+
+    <TextView
+        android:id="@+id/tv_view_binding_demo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:text="TextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,25 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--This is the navigation graph which is a XML resource.-->
+<!--The graph contains information such as destinations of the whole app and-->
+<!--paths a user could take through the app. To add a navigation, this place is the first step.-->
+
+<!--  <navigation> is the root node of the graph  -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
+    <!--  <fragment> can contains <action>, <argument>, and <deepLink>  -->
+    <!--  Navigation by actions allows us to visualize the path, add transition animation, arguments values, and backstack behavior.-->
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.calvert.googledevelopercertificate.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_goto_donate"
+            app:destination="@+id/navigation_donate"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_basic_toast"
+            app:destination="@+id/navigation_toasts_basic"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_positioning_your_toast"
+            app:destination="@+id/navigation_toasts_positioning_your_toast"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_custom_toast"
+            app:destination="@+id/navigation_custom_toast"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_view_binding"
+            app:destination="@+id/navigation_view_binding"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_barrier"
+            app:destination="@+id/navigation_barrier"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_chain"
+            app:destination="@+id/navigation_chain"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_keyframe_animation"
+            app:destination="@+id/navigation_keyframe_animation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_vertical_landingpage_recyclerview"
+            app:destination="@+id/rv_internal_navigation" />
+
+        <action
+            android:id="@+id/action_goto_horizontal_recyclerview"
+            app:destination="@+id/navigation_horizontal_recyclerview"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_grid_recyclerview"
+            app:destination="@+id/navigation_grid_recyclerview"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_staggered_grid_recyclerview"
+            app:destination="@+id/navigation_staggered_grid_recyclerview"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_custom_view_speed_controller"
+            app:destination="@+id/navigation_custom_view_speed_controller"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_custom_view_light_bulb"
+            app:destination="@+id/navigation_custom_view_light_bulb"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_top_right_menu"
+            app:destination="@+id/navigation_menu_top_right_menu"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_dialogs_alert_dialogs"
+            app:destination="@+id/navigation_dialogs_alert_dialogs"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_dialogs_date_picker"
+            app:destination="@+id/navigation_dialogs_date_picker_dialog"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_dialogs_time_picker"
+            app:destination="@+id/navigation_dialogs_time_picker_dialog"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_tablayout"
+            app:destination="@+id/navigation_tablayout"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_tablayout_animated"
+            app:destination="@+id/navigation_tablayout_animated"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <!--Including nav graph from another module-->
+    <include app:graph="@navigation/rv_vertical_internal_navigation" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.calvert.googledevelopercertificate.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_donate"
+        android:name="com.calvert.donate.ui.donate.DonateFragment"
+        android:label="@string/title_donate"
+        tools:layout="@layout/fragment_donate" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.calvert.googledevelopercertificate.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_toasts_basic"
+        android:name="com.calvert.toasts.basic.BasicToastFragment"
+        android:label="@string/basic_toast"
+        tools:layout="@layout/fragment_toast_basic" />
+
+    <fragment
+        android:id="@+id/navigation_toasts_positioning_your_toast"
+        android:name="com.calvert.toasts.positioning_your_toast.PositioningYourToastFragment"
+        android:label="@string/positioning_your_toast"
+        tools:layout="@layout/fragment_positioning_your_toast" />
+
+    <fragment
+        android:id="@+id/navigation_custom_toast"
+        android:name="com.calvert.toasts.custom_toast.CustomToastFragment"
+        android:label="@string/custom_toast"
+        tools:layout="@layout/fragment_custom_toast" />
+
+    <fragment
+        android:id="@+id/navigation_view_binding"
+        android:name="com.calvert.viewbinding.ViewBindingDemoFragment"
+        android:label="@string/view_binding"
+        tools:layout="@layout/fragment_view_binding_demo" />
+
+    <fragment
+        android:id="@+id/navigation_barrier"
+        android:name="com.calvert.responsiveuiconstraintlayout.barrier.BarrierFragment"
+        android:label="@string/Barrier"
+        tools:layout="@layout/fragment_barrier" />
+
+    <fragment
+        android:id="@+id/navigation_chain"
+        android:name="com.calvert.responsiveuiconstraintlayout.chain.ChainFragment"
+        android:label="@string/chain"
+        tools:layout="@layout/fragment_chain" />
+
+    <fragment
+        android:id="@+id/navigation_keyframe_animation"
+        android:name="com.calvert.responsiveuiconstraintlayout.keyframeanimation.KeyframeAnimationFragment"
+        android:label="@string/keyframe_animation"
+        tools:layout="@layout/fragment_keyframe_animation" />
+
+    <fragment
+        android:id="@+id/navigation_horizontal_recyclerview"
+        android:name="com.calvert.recyclerview.horizontalrecyclerview.view.HorizontalRecyclerViewFragment"
+        android:label="@string/horizontal"
+        tools:layout="@layout/fragment_horizontal_recycler_view" />
+
+    <fragment
+        android:id="@+id/navigation_grid_recyclerview"
+        android:name="com.calvert.recyclerview.gridrecyclerview.view.GridRecyclerViewFragment"
+        android:label="@string/grid"
+        tools:layout="@layout/fragment_grid_recycler_view" />
+
+    <fragment
+        android:id="@+id/navigation_staggered_grid_recyclerview"
+        android:name="com.calvert.recyclerview.staggeredrecyclerview.view.StaggeredGridRecyclerViewFragment"
+        android:label="@string/staggered_grid"
+        tools:layout="@layout/fragment_staggered_grid_recycler_view" />
+
+    <fragment
+        android:id="@+id/navigation_custom_view_speed_controller"
+        android:name="com.calvert.customview.speedknob.view.SpeedControllerFragment"
+        android:label="Speed Controller"
+        tools:layout="@layout/fragment_speed_controller" />
+
+    <fragment
+        android:id="@+id/navigation_custom_view_light_bulb"
+        android:name="com.calvert.customview.lightbulb.view.LightBulbFragment"
+        android:label="Light Bulb"
+        tools:layout="@layout/fragment_light_bulb" />
+
+    <fragment
+        android:id="@+id/navigation_menu_top_right_menu"
+        android:name="com.calvert.menu.MenuFragment"
+        android:label="Right Menu"
+        tools:layout="@layout/fragment_menu" />
+
+    <fragment
+        android:id="@+id/navigation_dialogs_alert_dialogs"
+        android:name="com.calvert.dialogs.alertdialog.AlertDialogDemoFragment"
+        android:label="Alert Dialogs"
+        tools:layout="@layout/fragment_alert_dialog_demo" />
+
+    <fragment
+        android:id="@+id/navigation_dialogs_date_picker_dialog"
+        android:name="com.calvert.dialogs.datapickerdialog.DatePickerDemoFragment"
+        android:label="Date Picker"
+        tools:layout="@layout/fragment_date_picker_demo" />
+
+    <fragment
+        android:id="@+id/navigation_dialogs_time_picker_dialog"
+        android:name="com.calvert.dialogs.timepickerdialog.TimePickerDemoFragment"
+        android:label="Time Picker"
+        tools:layout="@layout/fragment_time_picker_demo" />
+
+    <fragment
+        android:id="@+id/navigation_tablayout"
+        android:name="com.calvert.tablayout.demo.view.normal.TabLayoutFragment"
+        android:label="Tab Layout"
+        tools:layout="@layout/fragment_tab_layout" />
+
+    <fragment
+        android:id="@+id/navigation_tablayout_animated"
+        android:name="com.calvert.tablayout.demo.view.animated.AnimatedTabLayoutFragment"
+        android:label="Animated Tab Layout"
+        tools:layout="@layout/fragment_animated_tab_layout" />
 </navigation>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="speed_control_explain">Custom view of a speed control knob. Tap to increase the speed.</string>
+    <string name="speed_knob">Speed knob</string>
+    <string name="fan_off">off</string>
+    <string name="fan_low">1</string>
+    <string name="fan_medium">2</string>
+    <string name="fan_high">3</string>
+    <string name="change">Change</string>
+    <string name="reset">Reset</string>
+    <string name="lights_off">Lights off</string>
+    <string name="bright">Bright</string>
+    <string name="dim">Dim</string>
+    <string name="light_bulb">Light Bulb</string>
+    <string name="status">Status</string>
+    <string name="light_bulb_explain">Custom view of a light bulb. Tap to turn on the bulb.</string>
+</resources>

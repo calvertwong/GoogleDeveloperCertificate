@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/default_horizontal_margin"
+    android:layout_marginEnd="@dimen/default_horizontal_margin"
+    tools:context=".barrier.BarrierFragment">
+
+    <TextView
+        android:id="@+id/tv_barrier_explain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/barrier_explain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_default_one"
+        style="@style/Common_Button_Style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="@string/_30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_barrier_explain"
+        app:layout_constraintWidth_percent="0.30" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_default_two"
+        style="@style/Common_Button_Style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/_40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_default_one"
+        app:layout_constraintWidth_percent="0.40" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="btn_default_one, btn_default_two"
+        app:layout_constraintStart_toEndOf="@id/btn_default_two" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_right"
+        style="@style/Common_Button_Style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="@string/right_button"
+        app:layout_constraintStart_toEndOf="@+id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/tv_barrier_explain"
+        app:layout_constraintWidth_percent="0.35" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

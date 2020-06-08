@@ -1,0 +1,13 @@
+<resources>
+    <string name="positive_button">Positive button</string>
+    <string name="negative_button">Negative button</string>
+    <string name="neutral_button">Neutral button</string>
+    <string name="two_buttons">Two buttons (Positive, Neutral)</string>
+    <string name="three_buttons_not_cancellable">Three buttons, not cancellable</string>
+    <string name="open">Open</string>
+    <string name="select_a_date">Select a date</string>
+    <string name="select_a_time">Select a time</string>
+    <string name="date_picker_explain">The selected date will be returned to the fragment and displays on the screen after the date has been selected.</string>
+    <string name="time_picker_explain">The selected time will be returned to the fragment and displays on the screen after the time has been selected
+        .</string>
+</resources>

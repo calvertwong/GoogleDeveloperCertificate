@@ -59,5 +59,12 @@ val TOPIC_LIST: List<TopicObject> = listOf(
         listOf(
             R.id.action_goto_dialogs_alert_dialogs, R.id.action_goto_dialogs_date_picker, R.id.action_goto_dialogs_time_picker
         )
+    ),
+    TopicObject(
+        "Tab Layout",
+        listOf("3 Tabs Tab Layout", "Animated Tab Layout"),
+        listOf(
+            R.id.action_goto_tablayout, R.id.action_goto_tablayout_animated
+        )
     )
 )

@@ -69,4 +69,5 @@ dependencies {
     implementation project(':customview')
     implementation project(':menu')
     implementation project(':dialogs')
+    implementation project(':tablayout')
 }

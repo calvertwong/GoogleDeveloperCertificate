@@ -124,6 +124,18 @@
             app:destination="@+id/navigation_dialogs_time_picker_dialog"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_tablayout"
+            app:destination="@+id/navigation_tablayout"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_tablayout_animated"
+            app:destination="@+id/navigation_tablayout_animated"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
 
     <!--Including nav graph from another module-->
@@ -230,4 +242,16 @@
         android:name="com.calvert.dialogs.timepickerdialog.TimePickerDemoFragment"
         android:label="Time Picker"
         tools:layout="@layout/fragment_time_picker_demo" />
+
+    <fragment
+        android:id="@+id/navigation_tablayout"
+        android:name="com.calvert.tablayout.demo.view.normal.TabLayoutFragment"
+        android:label="Tab Layout"
+        tools:layout="@layout/fragment_tab_layout" />
+
+    <fragment
+        android:id="@+id/navigation_tablayout_animated"
+        android:name="com.calvert.tablayout.demo.view.animated.AnimatedTabLayoutFragment"
+        android:label="Animated Tab Layout"
+        tools:layout="@layout/fragment_animated_tab_layout" />
 </navigation>

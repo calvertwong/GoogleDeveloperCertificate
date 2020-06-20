@@ -1,0 +1,9 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="send_notification">Send Notification</string>
+    <string name="big_picture_notification">Big Picture Notification</string>
+    <string name="big_text_notification">Big Text Notification</string>
+    <string name="inbox_style_notification">Inbox Style Notification</string>
+    <string name="messaging_style_notification">Messaging Style Notification</string>
+</resources>

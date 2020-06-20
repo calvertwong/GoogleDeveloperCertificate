@@ -31,7 +31,7 @@ class AnimatedTabLayoutFragment : Fragment() {
             adapter = ViewPagedAdapter(tabs, this@AnimatedTabLayoutFragment)
             setPageTransformer(AnimatedViewPagerAdapter())
         }
-        // add this to set texts in tabs
+        // add this to set texts in tabsx=x+1
         TabLayoutMediator(binding.tabLayoutAnimated, binding.viewPagerAnimated) { tab, position ->
             tab.text = tabs[position]
         }.attach()

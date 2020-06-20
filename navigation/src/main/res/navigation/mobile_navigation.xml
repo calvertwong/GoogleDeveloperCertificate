@@ -136,6 +136,12 @@
             app:destination="@+id/navigation_tablayout_animated"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_notification"
+            app:destination="@+id/navigation_notification"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
 
     <!--Including nav graph from another module-->
@@ -254,4 +260,10 @@
         android:name="com.calvert.tablayout.demo.view.animated.AnimatedTabLayoutFragment"
         android:label="Animated Tab Layout"
         tools:layout="@layout/fragment_animated_tab_layout" />
+
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="com.calvert.notification.NotificationDemoFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification_demo" />
 </navigation>

@@ -58,6 +58,27 @@ jobs:
         uses: andstor/file-existence-action@v1
         with:
           files: "app-debug.apk,app-release.aab"
+          
+      - name: Testing success
+        if: steps.check_files.outputs.files_exists = 'true'
+        run: echo Testing success  
+      
+      - name: Testing fail
+        if: steps.check_files.outputs.files_exists = 'false'
+        run: echo Testing fails
+          
+      - name: Missing APK
+        if: steps.check_files.outputs.files_exists == 'false'
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions job result
+          body: Build job of ${{github.repository}} is incomplete!
+          to: ${{secrets.MAIL_USERNAME}}
+          from: ${{secrets.MAIL_USERNAME}}
         
       - name: Both APKs exists
         if: steps.check_files.outputs.files_exists == 'true'
@@ -72,15 +93,4 @@ jobs:
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
           
-      - name: Missing APK
-        if: steps.check_files.outputs.files_exists == 'false'
-        uses: dawidd6/action-send-mail@v2
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{secrets.MAIL_USERNAME}}
-          password: ${{secrets.MAIL_PASSWORD}}
-          subject: Github Actions job result
-          body: Build job of ${{github.repository}} is incomplete!
-          to: ${{secrets.MAIL_USERNAME}}
-          from: ${{secrets.MAIL_USERNAME}}
+

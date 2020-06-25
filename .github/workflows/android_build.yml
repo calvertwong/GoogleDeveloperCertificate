@@ -44,3 +44,9 @@ jobs:
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
+          
+      - name: Upload app APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release
+          path: ${{ env.SIGNED_RELEASE_FILE }}

@@ -59,13 +59,13 @@ jobs:
         with:
           files: "app-debug.apk,app-release.aab"
           
-      - name: Testing success
-        if: steps.check_files.outputs.files_exists = 'true'
-        run: echo Testing success  
+#       - name: Testing success
+#         if: steps.check_files.outputs.files_exists = 'true'
+#         run: echo Testing success  
       
-      - name: Testing fail
-        if: steps.check_files.outputs.files_exists = 'false'
-        run: echo Testing fails
+#       - name: Testing fail
+#         if: steps.check_files.outputs.files_exists = 'false'
+#         run: echo Testing fails
           
       - name: Missing APK
         if: steps.check_files.outputs.files_exists == 'false'

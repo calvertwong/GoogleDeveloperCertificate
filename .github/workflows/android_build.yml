@@ -36,6 +36,8 @@ jobs:
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/app-debug.apk
+        env: 
+          DEBUG_BUILD_SUCCESS: 'true'
 
       # Release APK
           
@@ -56,22 +58,24 @@ jobs:
         with:
           name: app-release
           path: ${{ env.SIGNED_RELEASE_FILE }}
+        env: 
+          RELEASE_BUILD_SUCCESS: 'true' 
 
-      # Send email
-   
-      - name: Send email if upload release artifact fails
-        if: always() # set always
-      - uses: technote-space/workflow-conclusion-action@v1
-        with:
-          status: failure
-        if: env.WORKFLOW_CONCLUSION == 'failure'
-      - uses: dawidd6/action-send-mail@v2
+  # Send email
+  email:
+    
+    runs-on: ubuntu-latest
+    
+    if: (DEBUG_BUILD_SUCCESS == 'true' && RELEASE_BUILD_SUCCESS == 'true'
+    steps:
+      - name: Send email indicate success
+        uses: dawidd6/action-send-mail@v2
         with:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: Build job of ${{github.repository}} is incomplete, Release APK missing OMG!
+          body: Build job of ${{github.repository}} completed. Generated Debug and Release artifacts!
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}

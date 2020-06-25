@@ -59,11 +59,8 @@ jobs:
         with:
           files: "app-debug.apk,app-release.apk"
 
-      - name: File exists
+      - name: Both APKs exists
         if: steps.check_files.outputs.files_exists == 'true'
-        run: echo All apks exist!
-      
-      - name: Send mail
         uses: dawidd6/action-send-mail@v2
         with:
           server_address: smtp.gmail.com
@@ -73,6 +70,21 @@ jobs:
           subject: Github Actions job result
           # Literal body:
           body: Build job of ${{github.repository}} completed successfully!
+          # Read file contents as body:
+          to: ${{secrets.MAIL_USERNAME}}
+          from: ${{secrets.MAIL_USERNAME}}
+          
+      - name: Missing APK
+        if: steps.check_files.outputs.files_exists == 'false'
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions job result
+          # Literal body:
+          body: Build job of ${{github.repository}} is incomplete!
           # Read file contents as body:
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}

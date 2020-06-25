@@ -60,15 +60,9 @@ jobs:
           path: ${{ env.SIGNED_RELEASE_FILE }}
         env: 
           RELEASE_BUILD_SUCCESS: 'true' 
-
-  # Send email
-  email:
     
-    runs-on: ubuntu-latest
-    
-    if: env.DEBUG_BUILD_SUCCESS == 'true' && env.RELEASE_BUILD_SUCCESS == 'true'
-    steps:
       - name: Send email indicate success
+        if: ${DEBUG_BUILD_SUCCESS} == 'true' && ${RELEASE_BUILD_SUCCESS} == 'true'
         uses: dawidd6/action-send-mail@v2
         with:
           server_address: smtp.gmail.com

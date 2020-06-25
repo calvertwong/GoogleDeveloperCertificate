@@ -53,22 +53,14 @@ jobs:
           name: app-release
           path: ${{ env.SIGNED_RELEASE_FILE }}
       
-      - name: Check apk existence
-        id: check_files
+      - name: Check debug apk existence
+        id: check_debug
         uses: andstor/file-existence-action@v1
         with:
-          files: "app-debug.apk,app-release.aab"
+          files: "app-debug.apk"
           
-#       - name: Testing success
-#         if: steps.check_files.outputs.files_exists = 'true'
-#         run: echo Testing success  
-      
-#       - name: Testing fail
-#         if: steps.check_files.outputs.files_exists = 'false'
-#         run: echo Testing fails
-          
-      - name: Missing APK
-        if: steps.check_files.outputs.files_exists == 'false'
+      - name: Missing Debug APK
+        if: steps.check_debug.outputs.files_exists == 'false'
         uses: dawidd6/action-send-mail@v2
         with:
           server_address: smtp.gmail.com
@@ -76,12 +68,12 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: Build job of ${{github.repository}} is incomplete!
+          body: Build job of ${{github.repository}} is incomplete, Debug APK missing!
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
-        
-      - name: Both APKs exists
-        if: steps.check_files.outputs.files_exists == 'true'
+          
+      - name: Contains Debug APK
+        if: steps.check_debug.outputs.files_exists == 'true'
         uses: dawidd6/action-send-mail@v2
         with:
           server_address: smtp.gmail.com
@@ -89,7 +81,39 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: Build job of ${{github.repository}} completed successfully!
+          body: Build job of ${{github.repository}} completed successfully, Debug APK exists!
+          to: ${{secrets.MAIL_USERNAME}}
+          from: ${{secrets.MAIL_USERNAME}}
+          
+      - name: Check release apk existence
+        id: check_release
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "app-release.aab"  
+        
+      - name: Missing Release APK
+        if: steps.check_release.outputs.files_exists == 'false'
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions job result
+          body: Build job of ${{github.repository}} is incomplete, Release APK missing!
+          to: ${{secrets.MAIL_USERNAME}}
+          from: ${{secrets.MAIL_USERNAME}}
+          
+      - name: Contains Release APK
+        if: steps.check_release.outputs.files_exists == 'true'
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions job result
+          body: Build job of ${{github.repository}} completed successfully, Release APK exists!
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
           

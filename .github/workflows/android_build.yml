@@ -47,8 +47,32 @@ jobs:
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
           
-      - name: Upload app APK
+      - name: Get Release APK
         uses: actions/upload-artifact@v1
         with:
           name: app-release
           path: ${{ env.SIGNED_RELEASE_FILE }}
+      
+      - name: Check apk existence
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "app-debug.apk,app-release.apk"
+
+      - name: File exists
+        if: steps.check_files.outputs.files_exists == 'true'
+        run: echo All apks exist!
+      
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions job result
+          # Literal body:
+          body: Build job of ${{github.repository}} completed successfully!
+          # Read file contents as body:
+          to: ${{secrets.MAIL_USERNAME}}
+          from: ${{secrets.MAIL_USERNAME}}

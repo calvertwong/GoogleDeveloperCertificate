@@ -54,7 +54,7 @@ jobs:
           keyPassword: ${{ secrets.KEY_PASSWORD }}
           
       - name: Upload Release Artifact
-        uses: actions/upload-artifact@v1, dawidd6/action-send-mail@v2
+        uses: actions/upload-artifact@v1
         with:
           name: app-release
           path: ${{ env.SIGNED_RELEASE_FILE }}

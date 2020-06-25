@@ -54,13 +54,13 @@ jobs:
           keyPassword: ${{ secrets.KEY_PASSWORD }}
           
       - name: Upload Release Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v1, dawidd6/action-send-mail@v2
         with:
           name: app-release
           path: ${{ env.SIGNED_RELEASE_FILE }}
         env: 
           RELEASE_BUILD_SUCCESS: 'true' 
-    
+        
       - name: Send email indicate success
         if: ${DEBUG_BUILD_SUCCESS} == 'true' && ${RELEASE_BUILD_SUCCESS} == 'true'
         uses: dawidd6/action-send-mail@v2
@@ -73,3 +73,17 @@ jobs:
           body: Build job of ${{github.repository}} completed. Generated Debug and Release artifacts!
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
+          
+      - name: Send email indicate failure
+        if: ${DEBUG_BUILD_SUCCESS} != 'true' || ${RELEASE_BUILD_SUCCESS} != 'true'
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions job result
+          body: Build job of ${{github.repository}} is incomplete. 
+          to: ${{secrets.MAIL_USERNAME}}
+          from: ${{secrets.MAIL_USERNAME}}
+          

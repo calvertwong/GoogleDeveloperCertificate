@@ -66,7 +66,7 @@ jobs:
     
     runs-on: ubuntu-latest
     
-    if: (DEBUG_BUILD_SUCCESS == 'true' && RELEASE_BUILD_SUCCESS == 'true'
+    if: env.DEBUG_BUILD_SUCCESS == 'true' && env.RELEASE_BUILD_SUCCESS == 'true'
     steps:
       - name: Send email indicate success
         uses: dawidd6/action-send-mail@v2

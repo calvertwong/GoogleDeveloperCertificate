@@ -24,7 +24,7 @@ jobs:
       - name: Run test
         run: ./gradlew test
 
-      - name: Build Debug Project
+      - name: Build Debug APK
         run: ./gradlew assembleDebug
         
       - name: Get Debug APK
@@ -39,7 +39,7 @@ jobs:
       - name: Sign Android release
         uses: r0adkll/sign-android-release@v1
         with:
-          path: app/build/outputs/apk/release/app-release.apk
+          releaseDirectory: app/build/outputs/apk/release/app-release.apk
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}

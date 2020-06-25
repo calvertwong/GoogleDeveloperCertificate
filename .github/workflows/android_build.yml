@@ -47,12 +47,29 @@ jobs:
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
           
-      - name: Get Release APK
+      - name: Upload Release Artifact
         uses: actions/upload-artifact@v1
         with:
           name: app-release
           path: ${{ env.SIGNED_RELEASE_FILE }}
-      
+   
+      - name: Send email if upload release artifact fails
+        if: always() # set always
+      - uses: technote-space/workflow-conclusion-action@v1
+        with:
+          status: failure
+        if: env.WORKFLOW_CONCLUSION == 'failure'
+      - uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions job result
+          body: Build job of ${{github.repository}} is incomplete, Release APK missing OMG!
+          to: ${{secrets.MAIL_USERNAME}}
+          from: ${{secrets.MAIL_USERNAME}}
+                
       - name: Check debug apk existence
         id: check_debug
         uses: andstor/file-existence-action@v1

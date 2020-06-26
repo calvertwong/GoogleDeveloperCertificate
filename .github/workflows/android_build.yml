@@ -17,11 +17,12 @@ jobs:
 
     steps:
       - name: Set env variable
-      - run: echo '::set-env name=HAS_RELEASE_ARTIFACT::false'
+        id: hasReleaseArtifactID
+        run: echo "::set-output name=hasReleaseArtifact::false"
         
       - name: Checking out repository                 
         uses: actions/checkout@v2
-
+        
       - name: Set Up JDK
         uses: actions/setup-java@v1
         with:
@@ -85,7 +86,7 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: Build job of ${{github.repository}} is incomplete. Has debug artifact ${{env.HAS_RELEASE_ARTIFACT}}
+          body: Build job of ${{github.repository}} is incomplete. Has debug artifact ${{steps.hasReleaseArtifactID.outputs.hasReleaseArtifact}}
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
           

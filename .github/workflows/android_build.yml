@@ -62,7 +62,7 @@ jobs:
           RELEASE_BUILD_SUCCESS: 'true' 
         
       - name: Send email indicate success
-        if: ${DEBUG_BUILD_SUCCESS} == 'true' && ${RELEASE_BUILD_SUCCESS} == 'true'
+        if: ${{DEBUG_BUILD_SUCCESS}} == 'true' && ${{RELEASE_BUILD_SUCCESS}} == 'true'
         uses: dawidd6/action-send-mail@v2
         with:
           server_address: smtp.gmail.com
@@ -75,7 +75,7 @@ jobs:
           from: ${{secrets.MAIL_USERNAME}}
           
       - name: Send email indicate failure
-        if: ${DEBUG_BUILD_SUCCESS} != 'true' || ${RELEASE_BUILD_SUCCESS} != 'true'
+        if: ${{DEBUG_BUILD_SUCCESS}} != 'true' || ${{RELEASE_BUILD_SUCCESS}} != 'true'
         uses: dawidd6/action-send-mail@v2
         with:
           server_address: smtp.gmail.com

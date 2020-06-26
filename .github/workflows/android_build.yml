@@ -8,6 +8,7 @@ on:
     types: [started]
 
 jobs:
+    
   build:
 
     runs-on: ubuntu-latest
@@ -16,6 +17,10 @@ jobs:
 
     steps:
       - name: Checking out repository
+        env:
+            HAS_DEBUG_ARTIFACT: 'false'
+            HAS_RELEASE_ARTIFACT: 'false'
+                 
         uses: actions/checkout@v2
 
       - name: Set Up JDK
@@ -79,7 +84,7 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: Build job of ${{github.repository}} is incomplete. 
+          body: Build job of ${{github.repository}} is incomplete. Has debug artifact ${{HAS_DEBUG_ARTIFACT}}
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
           

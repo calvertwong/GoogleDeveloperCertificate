@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Set env variable
-        run: echo '::set-env name=HAS_RELEASE_ARTIFACT::false'
+        run: echo '::set-env name=HAS_DEBUG_ARTIFACT::false' && echo '::set-env name=HAS_RELEASE_ARTIFACT::false'
         
       - name: Checking out repository                 
         uses: actions/checkout@v2
@@ -40,7 +40,9 @@ jobs:
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/app-debug.apk
-          run: echo ${{env.HAS_RELEASE_ARTIFACT}}
+          
+      - name: Set HAS_DEBUG_ARTIFACT to true
+        run: echo '::set-env name=HAS_DEBUG_ARTIFACT::true'
 
       # Release APK
           
@@ -61,7 +63,9 @@ jobs:
         with:
           name: app-release
           path: ${{ env.SIGNED_RELEASE_FILE }}
-          run: echo '::set-env name=HAS_RELEASE_ARTIFACT::true'
+          
+      - name: Set HAS_RELEASE_ARTIFACT to true
+        run: echo '::set-env name=HAS_RELEASE_ARTIFACT::true'
         
       - name: Send email indicate success
         if: ${{success()}}
@@ -72,7 +76,7 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: Build job of ${{github.repository}} completed. Generated Debug and Release artifacts!
+          body: Build job of ${{github.repository}} completed.\nGenerated Debug artifact......${{env.HAS_DEBUG_ARTIFACT}}\nGenerated Release artifact......${{env.HAS_RELEASE_ARTIFACT}}
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
           
@@ -85,7 +89,7 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: Build job of ${{github.repository}} is incomplete. Has debug artifact ${{env.HAS_RELEASE_ARTIFACT}}
+          body: Build job of ${{github.repository}} is incomplete.\nGenerated Debug artifact......${{env.HAS_DEBUG_ARTIFACT}}\nGenerated Release artifact......${{env.HAS_RELEASE_ARTIFACT}}
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
           

@@ -76,7 +76,7 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: Build job of ${{github.repository}} completed.\nGenerated Debug artifact......${{env.HAS_DEBUG_ARTIFACT}}\nGenerated Release artifact......${{env.HAS_RELEASE_ARTIFACT}}
+          body: "Build job of ${{github.repository}} completed.\nGenerated Debug artifact......${{env.HAS_DEBUG_ARTIFACT}}\nGenerated Release artifact......${{env.HAS_RELEASE_ARTIFACT}}"
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
           
@@ -89,7 +89,7 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: Build job of ${{github.repository}} is incomplete.\nGenerated Debug artifact......${{env.HAS_DEBUG_ARTIFACT}}\nGenerated Release artifact......${{env.HAS_RELEASE_ARTIFACT}}
+          body: "Build job of ${{github.repository}} is incomplete.\nGenerated Debug artifact......${{env.HAS_DEBUG_ARTIFACT}}\nGenerated Release artifact......${{env.HAS_RELEASE_ARTIFACT}}"
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
           

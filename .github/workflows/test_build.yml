@@ -17,9 +17,6 @@ jobs:
       - name: Set env variables
         run: echo '::set-env name=HAS_DEBUG_ARTIFACT::false' && echo '::set-env name=HAS_RELEASE_ARTIFACT::false'
 
-      - name: Make gradlew executable
-        run: chmod +x gradlew
-
       - name: Checking out repository
         uses: actions/checkout@v2
 
@@ -28,7 +25,12 @@ jobs:
         with:
           java-version: 1.8
 
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
       - name: Run test
+        if: ${{success()}}
         run: ./gradlew test
 
       # Debug APK

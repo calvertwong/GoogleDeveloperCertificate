@@ -16,6 +16,9 @@ jobs:
     if: github.actor == github.event.repository.owner.login
 
     steps:
+      - name: Set env variable
+      - run: echo '::set-env name=HAS_RELEASE_ARTIFACT::false'
+        
       - name: Checking out repository                 
         uses: actions/checkout@v2
 
@@ -23,7 +26,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-          run: echo '::set-env name=HAS_RELEASE_ARTIFACT::false'
           
       - name: Run test
         run: ./gradlew test
@@ -38,6 +40,7 @@ jobs:
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/app-debug.apk
+          run: echo ${{env.HAS_RELEASE_ARTIFACT}}
 
       # Release APK
           
@@ -82,7 +85,7 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: Build job of ${{github.repository}} is incomplete. Has debug artifact $HAS_RELEASE_ARTIFACT
+          body: Build job of ${{github.repository}} is incomplete. Has debug artifact ${{env.HAS_RELEASE_ARTIFACT}}
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
           

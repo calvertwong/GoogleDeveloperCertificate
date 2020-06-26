@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = null
 
-if(keystorePropertiesFile != null) {
+if(keystorePropertiesFile.exists()) {
 // Initialize a new Properties() object called keystoreProperties.
     keystoreProperties = new Properties()
 
@@ -39,13 +39,13 @@ android {
                 storePassword keystoreProperties['storePassword']
             }
         }
-    }
 
-    buildTypes {
-        release {
-            minifyEnabled true
-            signingConfig signingConfigs.config
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        buildTypes {
+            release {
+                minifyEnabled true
+                signingConfig signingConfigs.config
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
         }
     }
 

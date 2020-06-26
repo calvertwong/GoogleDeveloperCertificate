@@ -13,8 +13,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    if: github.actor == github.event.repository.owner.login
-
     steps:
       - name: Set env variable
         run: echo '::set-env name=HAS_DEBUG_ARTIFACT::false' && echo '::set-env name=HAS_RELEASE_ARTIFACT::false'
@@ -76,7 +74,7 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: "Build job of ${{github.repository}} completed.\nGenerated Debug artifact......${{env.HAS_DEBUG_ARTIFACT}}\nGenerated Release artifact......${{env.HAS_RELEASE_ARTIFACT}}"
+          body: "Build job of ${{github.repository}} completed.\n\nGenerated Debug artifact----------${{env.HAS_DEBUG_ARTIFACT}}\n\nGenerated Release artifact----------${{env.HAS_RELEASE_ARTIFACT}}\n\nBuild triggered by <b>${{github.actor}}</b>"
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
           
@@ -89,7 +87,7 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions job result
-          body: "Build job of ${{github.repository}} is incomplete.\nGenerated Debug artifact......${{env.HAS_DEBUG_ARTIFACT}}\nGenerated Release artifact......${{env.HAS_RELEASE_ARTIFACT}}"
+          body: "Build job of ${{github.repository}} is incomplete.\n\nGenerated Debug artifact----------${{env.HAS_DEBUG_ARTIFACT}}\n\nGenerated Release artifact----------${{env.HAS_RELEASE_ARTIFACT}}\n\nBuild triggered by <b>${{github.actor}}</b>"
           to: ${{secrets.MAIL_USERNAME}}
           from: ${{secrets.MAIL_USERNAME}}
           

@@ -31,7 +31,7 @@ jobs:
       # Debug APK
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --stacktrace
         
       - name: Get Debug APK
         uses: actions/upload-artifact@v1
@@ -45,7 +45,7 @@ jobs:
       # Release APK
           
       - name: Build Signed APK
-        run: ./gradlew assembleRelease
+        run: ./gradlew assembleRelease --stacktrace
         
       - name: Sign Android release
         uses: r0adkll/sign-android-release@v1

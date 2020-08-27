@@ -30,5 +30,5 @@ object Libs {
             .androidx_recyclerview__recyclerview_selection
     }"
     const val com_github_bumptech_glide__glide: String = "com.github.bumptech.glide:glide:${Versions.com_github_bumptech_glide__glide}"
-    const val com_github_bumptech_glide__compiler: String = "com.github.bumptech.glide:compiler${Versions.com_github_bumptech_glide__compiler}"
+    const val com_github_bumptech_glide__compiler: String = "com.github.bumptech.glide:compiler:${Versions.com_github_bumptech_glide__compiler}"
 }

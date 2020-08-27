@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home">Home</string>
+    <string name="title_donate">Donate</string>
+    <string name="basic_toast">Basic Toast</string>
+    <string name="positioning_your_toast">Positioning Your Toast</string>
+    <string name="custom_toast">Custom Toast</string>
+    <string name="view_binding">View Binding</string>
+    <string name="Barrier">Barrier</string>
+    <string name="chain">Chain</string>
+    <string name="keyframe_animation">Keyframe Animation</string>
+    <string name="activity_menu">Activity Menu</string>
+    <string name="grid">Grid</string>
+    <string name="staggered_grid">Staggered Grid</string>
+    <string name="horizontal">Horizontal</string>
+    <string name="vertical">Vertical</string>
+    <string name="speed_controller">Speed Controller</string>
+    <string name="light_bulb">Light Bulb</string>
+    <string name="right_menu">Right Menu</string>
+    <string name="alert_dialogs">Alert Dialogs</string>
+    <string name="date_picker">Date Picker</string>
+    <string name="time_picker">Time Picker</string>
+    <string name="tab_layout">Tab Layout</string>
+    <string name="animated_tab_layout">Animated Tab Layout</string>
+    <string name="notification">Notification</string>
+</resources>

@@ -21,10 +21,6 @@
         .</string>
     <string name="rv_horizontal_endless_direction_left_explain"><b>Endless Horizontal Recycler View (Left)</b>\nEndless scrolling to the left.
     </string>
-    <string name="grid">Grid</string>
-    <string name="staggered_grid">Staggered Grid</string>
-    <string name="horizontal">Horizontal</string>
-    <string name="vertical">Vertical</string>
     <string name="sample_image">Sample image</string>
     <string name="rv_staggered_grid_explain">Staggered grid changes its layout dynamically depending on the data provided. This example is fetching
         some random images with different sizes and notice that the grids are resizing based on the image sizes.</string>

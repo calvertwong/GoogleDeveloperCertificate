@@ -1,0 +1,93 @@
+name: Android Build
+
+on:
+  push:
+    branches:
+      - '*'
+  watch:
+    types: [started]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set env variable
+        run: echo '::set-env name=HAS_DEBUG_ARTIFACT::false' && echo '::set-env name=HAS_RELEASE_ARTIFACT::false'
+
+      - name: Checking out repository
+        uses: actions/checkout@v2
+
+      - name: Set Up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Run test
+        run: ./gradlew test
+
+      # Debug APK
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Get Debug APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Set HAS_DEBUG_ARTIFACT to true
+        run: echo '::set-env name=HAS_DEBUG_ARTIFACT::true'
+
+        # Release APK
+
+      - name: Build Signed APK
+        run: ./gradlew assembleRelease --stacktrace
+
+      - name: Sign Android release
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+
+      - name: Upload Release Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release
+          path: ${{ env.SIGNED_RELEASE_FILE }}
+
+      - name: Set HAS_RELEASE_ARTIFACT to true
+        run: echo '::set-env name=HAS_RELEASE_ARTIFACT::true'
+
+      - name: Send email indicate success
+        if: ${{success()}}
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions job result
+          body: "Build job of ${{github.repository}} completed.\n\nGenerated Debug artifact----------${{env.HAS_DEBUG_ARTIFACT}}\n\nGenerated Release artifact----------${{env.HAS_RELEASE_ARTIFACT}}\n\nBuild triggered by <b>${{github.actor}}</b>"
+          to: ${{secrets.MAIL_USERNAME}}
+          from: ${{secrets.MAIL_USERNAME}}
+
+      - name: Send email indicate failure
+        if: ${{failure() || cancelled()}}
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions job result
+          body: "Build job of ${{github.repository}} is incomplete.\n\nGenerated Debug artifact----------${{env.HAS_DEBUG_ARTIFACT}}\n\nGenerated Release artifact----------${{env.HAS_RELEASE_ARTIFACT}}\n\nBuild triggered by <b>${{github.actor}}</b>"
+          to: ${{secrets.MAIL_USERNAME}}
+          from: ${{secrets.MAIL_USERNAME}}
+          

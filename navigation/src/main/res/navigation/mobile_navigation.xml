@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<!--This is the navigation graph which is a XML resource.-->
-<!--The graph contains information such as destinations of the whole app and-->
-<!--paths a user could take through the app. To add a navigation, this place is the first step.-->
-
-<!--  <navigation> is the root node of the graph  -->
+<?xml version="1.0" encoding="utf-8"?><!-- https://github.com/DuartBreedt/Android-Navigation-in-a-Single-Activity-Multi-Module-App -->
+<!-- Fragments are not referenced in this file and the fragment name should be in red.
+The reason they are not in red currently is because the error has been suppressed at line 7.
+Although they are not referenced, by providing the correct package and file location will make
+this works. -->
+<!--suppress AndroidDomInspection -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_home"
+    tools:ignore="UnusedNavigation">
 
     <!--  <fragment> can contains <action>, <argument>, and <deepLink>  -->
     <!--  Navigation by actions allows us to visualize the path, add transition animation, arguments values, and backstack behavior.-->
+    <!--App Module-->
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.calvert.googledevelopercertificate.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home">
+        android:label="@string/title_home">
 
         <action
             android:id="@+id/action_goto_donate"
@@ -136,122 +136,124 @@
             app:destination="@+id/navigation_tablayout_animated"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_goto_notification"
+            app:destination="@+id/navigation_notification"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
 
-    <!--Including nav graph from another module-->
-    <include app:graph="@navigation/rv_vertical_internal_navigation" />
-
-    <fragment
-        android:id="@+id/navigation_donate"
-        android:name="com.calvert.donate.ui.donate.DonateFragment"
-        android:label="@string/title_donate"
-        tools:layout="@layout/fragment_donate" />
-
-    <fragment
-        android:id="@+id/navigation_toasts_basic"
-        android:name="com.calvert.toasts.basic.BasicToastFragment"
-        android:label="@string/basic_toast"
-        tools:layout="@layout/fragment_toast_basic" />
-
-    <fragment
-        android:id="@+id/navigation_toasts_positioning_your_toast"
-        android:name="com.calvert.toasts.positioning_your_toast.PositioningYourToastFragment"
-        android:label="@string/positioning_your_toast"
-        tools:layout="@layout/fragment_positioning_your_toast" />
-
-    <fragment
-        android:id="@+id/navigation_custom_toast"
-        android:name="com.calvert.toasts.custom_toast.CustomToastFragment"
-        android:label="@string/custom_toast"
-        tools:layout="@layout/fragment_custom_toast" />
-
-    <fragment
-        android:id="@+id/navigation_view_binding"
-        android:name="com.calvert.viewbinding.ViewBindingDemoFragment"
-        android:label="@string/view_binding"
-        tools:layout="@layout/fragment_view_binding_demo" />
-
-    <fragment
-        android:id="@+id/navigation_barrier"
-        android:name="com.calvert.responsiveuiconstraintlayout.barrier.BarrierFragment"
-        android:label="@string/Barrier"
-        tools:layout="@layout/fragment_barrier" />
-
-    <fragment
-        android:id="@+id/navigation_chain"
-        android:name="com.calvert.responsiveuiconstraintlayout.chain.ChainFragment"
-        android:label="@string/chain"
-        tools:layout="@layout/fragment_chain" />
-
-    <fragment
-        android:id="@+id/navigation_keyframe_animation"
-        android:name="com.calvert.responsiveuiconstraintlayout.keyframeanimation.KeyframeAnimationFragment"
-        android:label="@string/keyframe_animation"
-        tools:layout="@layout/fragment_keyframe_animation" />
+    <!--Including nav graph from another module or location-->
+    <!--recyclerview module-->
+    <include app:graph="@navigation/vertical_recyclerview_navigation" />
 
     <fragment
         android:id="@+id/navigation_horizontal_recyclerview"
         android:name="com.calvert.recyclerview.horizontalrecyclerview.view.HorizontalRecyclerViewFragment"
-        android:label="@string/horizontal"
-        tools:layout="@layout/fragment_horizontal_recycler_view" />
+        android:label="@string/horizontal" />
 
     <fragment
         android:id="@+id/navigation_grid_recyclerview"
         android:name="com.calvert.recyclerview.gridrecyclerview.view.GridRecyclerViewFragment"
-        android:label="@string/grid"
-        tools:layout="@layout/fragment_grid_recycler_view" />
+        android:label="@string/grid" />
 
     <fragment
         android:id="@+id/navigation_staggered_grid_recyclerview"
         android:name="com.calvert.recyclerview.staggeredrecyclerview.view.StaggeredGridRecyclerViewFragment"
-        android:label="@string/staggered_grid"
-        tools:layout="@layout/fragment_staggered_grid_recycler_view" />
+        android:label="@string/staggered_grid" />
 
+    <!--donate module-->
+    <fragment
+        android:id="@+id/navigation_donate"
+        android:name="com.calvert.donate.ui.donate.DonateFragment"
+        android:label="@string/title_donate" />
+
+    <!--toast module-->
+    <fragment
+        android:id="@+id/navigation_toasts_basic"
+        android:name="com.calvert.toasts.basic.BasicToastFragment"
+        android:label="@string/basic_toast" />
+
+    <fragment
+        android:id="@+id/navigation_toasts_positioning_your_toast"
+        android:name="com.calvert.toasts.positioning_your_toast.PositioningYourToastFragment"
+        android:label="@string/positioning_your_toast" />
+
+    <fragment
+        android:id="@+id/navigation_custom_toast"
+        android:name="com.calvert.toasts.custom_toast.CustomToastFragment"
+        android:label="@string/custom_toast" />
+
+    <!--viewbinding module-->
+    <fragment
+        android:id="@+id/navigation_view_binding"
+        android:name="com.calvert.viewbinding.ViewBindingDemoFragment"
+        android:label="@string/view_binding" />
+
+    <!--responsiveuiconstraintlayout module-->
+    <fragment
+        android:id="@+id/navigation_barrier"
+        android:name="com.calvert.responsiveuiconstraintlayout.barrier.BarrierFragment"
+        android:label="@string/Barrier" />
+
+    <fragment
+        android:id="@+id/navigation_chain"
+        android:name="com.calvert.responsiveuiconstraintlayout.chain.ChainFragment"
+        android:label="@string/chain" />
+
+    <fragment
+        android:id="@+id/navigation_keyframe_animation"
+        android:name="com.calvert.responsiveuiconstraintlayout.keyframeanimation.KeyframeAnimationFragment"
+        android:label="@string/keyframe_animation" />
+
+    <!--customview module-->
     <fragment
         android:id="@+id/navigation_custom_view_speed_controller"
         android:name="com.calvert.customview.speedknob.view.SpeedControllerFragment"
-        android:label="Speed Controller"
-        tools:layout="@layout/fragment_speed_controller" />
+        android:label="@string/speed_controller" />
 
     <fragment
         android:id="@+id/navigation_custom_view_light_bulb"
         android:name="com.calvert.customview.lightbulb.view.LightBulbFragment"
-        android:label="Light Bulb"
-        tools:layout="@layout/fragment_light_bulb" />
+        android:label="@string/light_bulb" />
 
+    <!--menu module-->
     <fragment
         android:id="@+id/navigation_menu_top_right_menu"
         android:name="com.calvert.menu.MenuFragment"
-        android:label="Right Menu"
-        tools:layout="@layout/fragment_menu" />
+        android:label="@string/right_menu" />
 
+    <!--dialogs module-->
     <fragment
         android:id="@+id/navigation_dialogs_alert_dialogs"
         android:name="com.calvert.dialogs.alertdialog.AlertDialogDemoFragment"
-        android:label="Alert Dialogs"
-        tools:layout="@layout/fragment_alert_dialog_demo" />
+        android:label="@string/alert_dialogs" />
 
     <fragment
         android:id="@+id/navigation_dialogs_date_picker_dialog"
         android:name="com.calvert.dialogs.datapickerdialog.DatePickerDemoFragment"
-        android:label="Date Picker"
-        tools:layout="@layout/fragment_date_picker_demo" />
+        android:label="@string/date_picker" />
 
     <fragment
         android:id="@+id/navigation_dialogs_time_picker_dialog"
         android:name="com.calvert.dialogs.timepickerdialog.TimePickerDemoFragment"
-        android:label="Time Picker"
-        tools:layout="@layout/fragment_time_picker_demo" />
+        android:label="@string/time_picker" />
 
+    <!--tablayout module-->
     <fragment
         android:id="@+id/navigation_tablayout"
         android:name="com.calvert.tablayout.demo.view.normal.TabLayoutFragment"
-        android:label="Tab Layout"
-        tools:layout="@layout/fragment_tab_layout" />
+        android:label="@string/tab_layout" />
 
     <fragment
         android:id="@+id/navigation_tablayout_animated"
         android:name="com.calvert.tablayout.demo.view.animated.AnimatedTabLayoutFragment"
-        android:label="Animated Tab Layout"
-        tools:layout="@layout/fragment_animated_tab_layout" />
+        android:label="@string/animated_tab_layout" />
+
+    <!--notification module-->
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="com.calvert.notification.NotificationDemoFragment"
+        android:label="@string/notification" />
 </navigation>

@@ -94,4 +94,5 @@ dependencies {
     implementation project(':menu')
     implementation project(':dialogs')
     implementation project(':tablayout')
+    implementation project(':navigation')
 }

@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--This is an another nav graph for vertical recycler view example for its own navigation.-->
+<!--We can omit this nav graph by moving these code to the core navigation code.-->
+<!--This is just an example that we can import nav graph.-->
+<!--suppress AndroidDomInspection -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rv_internal_navigation"
-    app:startDestination="@+id/navigation_vertical_landingpage_recyclerview">
+    app:startDestination="@+id/navigation_vertical_landingpage_recyclerview"
+    tools:ignore="UnusedNavigation">
 
     <fragment
         android:id="@+id/navigation_vertical_landingpage_recyclerview"

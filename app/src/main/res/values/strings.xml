@@ -1,13 +1,3 @@
 <resources>
     <string name="app_name">GoogleDeveloperCertificate</string>
-    <string name="title_home">Home</string>
-    <string name="title_donate">Donate</string>
-    <string name="basic_toast">Basic Toast</string>
-    <string name="positioning_your_toast">Positioning Your Toast</string>
-    <string name="custom_toast">Custom Toast</string>
-    <string name="view_binding">View Binding</string>
-    <string name="Barrier">Barrier</string>
-    <string name="chain">Chain</string>
-    <string name="keyframe_animation">Keyframe Animation</string>
-    <string name="activity_menu">Activity Menu</string>
 </resources>

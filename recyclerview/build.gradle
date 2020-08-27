@@ -51,4 +51,5 @@ dependencies {
     androidTestImplementation Libs.androidx_test_espresso__espresso_core
 
     implementation project(':common')
+    implementation project(':navigation')
 }

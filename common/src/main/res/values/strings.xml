@@ -23,4 +23,8 @@
     <string name="tab_layout">Tab Layout</string>
     <string name="animated_tab_layout">Animated Tab Layout</string>
     <string name="notification">Notification</string>
+    <string name="multi_views">Multi Views</string>
+    <string name="animate_always">Animate Always</string>
+    <string name="animateonce">Animate Once</string>
+    <string name="list_selection">List Selection</string>
 </resources>

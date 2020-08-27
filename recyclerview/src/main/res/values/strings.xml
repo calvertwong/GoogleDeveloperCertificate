@@ -3,10 +3,6 @@
     <string name="cheveron_right">Cheveron right</string>
     <string name="basic_rv_explain">Below is a basic recycler view that is displaying a list of items. Select any of the below items to see more on
         what a recycler view can do.</string>
-    <string name="multi_views">Multi Views</string>
-    <string name="animate_always">Animate Always</string>
-    <string name="animateonce">Animate Once</string>
-    <string name="list_selection">List Selection</string>
     <string name="rv_horizontal_explain"><b>Default Horizontal Recycler View</b>\nBelow is a horizontal oriented recycler view that scrolls to the
         right.</string>
     <string name="rv_horizontal_reverse_explain"><b>Reversed Horizontal Recycler View</b>\nThe reversed horizontal recycler view scrolls to

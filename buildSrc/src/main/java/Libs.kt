@@ -38,8 +38,7 @@ object Libs {
     // recycler view
     const val androidx_recyclerview__recyclerview: String = "androidx.recyclerview:recyclerview:${Versions.androidx_recyclerview__recyclerview}"
     const val androidx_recyclerview__recyclerview_selection: String = "androidx.recyclerview:recyclerview-selection:${
-        Versions
-            .androidx_recyclerview__recyclerview_selection
+        Versions.androidx_recyclerview__recyclerview_selection
     }"
 
     // glide
@@ -48,7 +47,10 @@ object Libs {
 
     // firebase cloud messaging
     const val com_google_firebase__firebase_messaging: String = "com.google.firebase:firebase-messaging:${
-        Versions
-            .com_google_firebase__firebase_messaging
+        Versions.com_google_firebase__firebase_messaging
     }"
+
+    // koin
+    const val org_koin__koin_core: String = "org.koin:koin-core:${Versions.org_koin__koin_core}"
+    const val org_koin__koin_android: String = "org.koin:koin-android:${Versions.org_koin__koin_android}"
 }

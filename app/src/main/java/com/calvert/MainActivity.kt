@@ -1,4 +1,4 @@
-package com.calvert.home
+package com.calvert
 
 import android.os.Bundle
 import android.view.Menu

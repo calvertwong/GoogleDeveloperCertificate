@@ -1,5 +1,5 @@
 object Versions {
-    const val kotlin_version = "1.3.72"
+    const val kotlin_version = "1.4.0"
     private const val nav_version = "2.3.0-beta01"
 
     const val androidx_appcompat__appcompat: String = "1.2.0"
@@ -39,4 +39,7 @@ object Versions {
     // glide
     const val com_github_bumptech_glide__glide: String = "4.11.0"
     const val com_github_bumptech_glide__compiler: String = "4.11.0"
+
+    // firebase cloud messaging
+    const val com_google_firebase__firebase_messaging: String = "20.2.0"
 }

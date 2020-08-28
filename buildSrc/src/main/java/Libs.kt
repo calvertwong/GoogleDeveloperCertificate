@@ -45,4 +45,10 @@ object Libs {
     // glide
     const val com_github_bumptech_glide__glide: String = "com.github.bumptech.glide:glide:${Versions.com_github_bumptech_glide__glide}"
     const val com_github_bumptech_glide__compiler: String = "com.github.bumptech.glide:compiler:${Versions.com_github_bumptech_glide__compiler}"
+
+    // firebase cloud messaging
+    const val com_google_firebase__firebase_messaging: String = "com.google.firebase:firebase-messaging:${
+        Versions
+            .com_google_firebase__firebase_messaging
+    }"
 }

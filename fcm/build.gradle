@@ -1,0 +1,14 @@
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation Libs.org_jetbrains_kotlin__kotlin_stdlib_jdk7
+    implementation Libs.androidx_appcompat__appcompat
+    implementation Libs.androidx_core_core_ktx
+    testImplementation Libs.junit__junit
+    androidTestImplementation Libs.androidx_test_ext__junit
+    androidTestImplementation Libs.androidx_test_espresso__espresso_core
+
+    // firebase cloud messaging
+    implementation Libs.com_google_firebase__firebase_messaging
+
+    implementation project(':common')
+}

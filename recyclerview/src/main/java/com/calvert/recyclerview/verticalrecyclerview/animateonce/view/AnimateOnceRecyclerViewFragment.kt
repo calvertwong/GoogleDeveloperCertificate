@@ -4,23 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.calvert.mockdata.MOCK_DATA_LIST
 import com.calvert.recyclerview.databinding.FragmentAnimateOnceRecyclerViewBinding
 import com.calvert.recyclerview.verticalrecyclerview.animateonce.adapter.AnimateOnceAdapter
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class AnimateOnceRecyclerViewFragment : Fragment() {
+class AnimateOnceRecyclerViewFragment : AppViewBindingBaseFragment<FragmentAnimateOnceRecyclerViewBinding>() {
 
-    private var _binding: FragmentAnimateOnceRecyclerViewBinding? = null
-    private val binding: FragmentAnimateOnceRecyclerViewBinding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentAnimateOnceRecyclerViewBinding.inflate(layoutInflater, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        setBinding(FragmentAnimateOnceRecyclerViewBinding.inflate(layoutInflater, container, false))
         return binding.root
     }
 
@@ -36,10 +30,5 @@ class AnimateOnceRecyclerViewFragment : Fragment() {
             // add divider
             addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

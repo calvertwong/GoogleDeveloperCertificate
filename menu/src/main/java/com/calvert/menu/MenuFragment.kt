@@ -8,19 +8,16 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.calvert.menu.databinding.FragmentMenuBinding
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class MenuFragment : Fragment() {
-
-    private var _binding: FragmentMenuBinding? = null
-    private val binding get() = _binding!!
+class MenuFragment : AppViewBindingBaseFragment<FragmentMenuBinding>() {
 
     private var isTextTypeMenu: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         setHasOptionsMenu(true)
-        _binding = FragmentMenuBinding.inflate(inflater, container, false)
+        setBinding(FragmentMenuBinding.inflate(inflater, container, false))
         return binding.root
     }
 
@@ -66,10 +63,5 @@ class MenuFragment : Fragment() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 }

@@ -6,22 +6,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.calvert.dialogs.databinding.FragmentDatePickerDemoBinding
 import com.calvert.dialogs.datapickerdialog.constant.DatePickerConstants
 import com.calvert.dialogs.datapickerdialog.util.DatePickerFragment
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class DatePickerDemoFragment : Fragment() {
+class DatePickerDemoFragment : AppViewBindingBaseFragment<FragmentDatePickerDemoBinding>() {
 
-    private var _binding: FragmentDatePickerDemoBinding? = null
-    private val binding get() = _binding!!
-
-    lateinit var datePicker: DatePickerFragment
+    private lateinit var datePicker: DatePickerFragment
 
     private val REQUEST_CODE = 11
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentDatePickerDemoBinding.inflate(inflater, container, false)
+        setBinding(FragmentDatePickerDemoBinding.inflate(inflater, container, false))
         return binding.root
     }
 
@@ -31,7 +28,7 @@ class DatePickerDemoFragment : Fragment() {
         binding.btnDatePickerFragment.setOnClickListener {
             datePicker = DatePickerFragment()
             datePicker.setTargetFragment(this, REQUEST_CODE)
-            datePicker.show(requireFragmentManager(), "datePicker")
+            datePicker.show(parentFragmentManager, "datePicker")
         }
     }
 
@@ -42,10 +39,5 @@ class DatePickerDemoFragment : Fragment() {
                 }\nYear: ${data?.getStringExtra(DatePickerConstants.SELECTED_YEAR)}"
             binding.tvSelectedDate.text = result
         }
-    }
-
-    override fun onDestroy() {
-        _binding = null
-        super.onDestroy()
     }
 }

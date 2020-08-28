@@ -5,19 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.calvert.tablayout.databinding.FragmentTabLayoutBinding
 import com.calvert.tablayout.demo.adapter.ViewPagedAdapter
+import com.calvert.ui.AppViewBindingBaseFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class TabLayoutFragment : Fragment() {
-
-    private var _binding: FragmentTabLayoutBinding? = null
-    private val binding get() = _binding!!
+class TabLayoutFragment : AppViewBindingBaseFragment<FragmentTabLayoutBinding>() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentTabLayoutBinding.inflate(inflater, container, false)
+        setBinding(FragmentTabLayoutBinding.inflate(inflater, container, false))
         return binding.root
     }
 
@@ -47,10 +44,4 @@ class TabLayoutFragment : Fragment() {
 
         })
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
-
 }

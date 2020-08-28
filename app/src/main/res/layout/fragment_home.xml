@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginStart="@dimen/default_horizontal_margin"
     android:layout_marginEnd="@dimen/default_horizontal_margin"
-    tools:context=".ui.home.HomeFragment">
+    tools:context="com.calvert.home.ui.HomeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_topic_item"

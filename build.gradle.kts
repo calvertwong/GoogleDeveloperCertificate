@@ -4,7 +4,7 @@ plugins {
 }
 
 val viewBindingModules: List<String> = listOf(
-    "app", "customview", "dialogs", "donate", "menu", "recyclerview", "responsiveuiconstraintlayout", "tablayout", "toast", "viewbinding"
+    "app", "common", "customview", "dialogs", "donate", "menu", "recyclerview", "responsiveuiconstraintlayout", "tablayout", "toasts", "viewbinding"
 )
 
 val dataBindingModules: List<String> = listOf(

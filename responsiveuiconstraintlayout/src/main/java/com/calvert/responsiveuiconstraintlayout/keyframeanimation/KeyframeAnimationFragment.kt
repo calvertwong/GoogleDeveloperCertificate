@@ -9,23 +9,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintSet
-import androidx.fragment.app.Fragment
 import com.calvert.responsiveuiconstraintlayout.R
 import com.calvert.responsiveuiconstraintlayout.databinding.FragmentKeyframeAnimationBinding
+import com.calvert.ui.AppViewBindingBaseFragment
 
 /**
  * ConstraintSet animations animate only the size and position of child elements. (Attributes such as color won't work)
  */
-class KeyframeAnimationFragment : Fragment() {
+class KeyframeAnimationFragment : AppViewBindingBaseFragment<FragmentKeyframeAnimationBinding>() {
 
-    private var _binding: FragmentKeyframeAnimationBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentKeyframeAnimationBinding.inflate(inflater, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        setBinding(FragmentKeyframeAnimationBinding.inflate(inflater, container, false))
         return binding.root
     }
 
@@ -52,10 +46,4 @@ class KeyframeAnimationFragment : Fragment() {
             constraintSet.applyTo(binding.clKeyframeLayout)
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

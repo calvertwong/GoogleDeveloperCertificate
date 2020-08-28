@@ -5,16 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.calvert.customview.databinding.FragmentSpeedControllerBinding
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class SpeedControllerFragment : Fragment() {
-
-    private var _binding: FragmentSpeedControllerBinding? = null
-    private val binding get() = _binding!!
+class SpeedControllerFragment : AppViewBindingBaseFragment<FragmentSpeedControllerBinding>() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentSpeedControllerBinding.inflate(inflater, container, false)
+        setBinding(FragmentSpeedControllerBinding.inflate(inflater, container, false))
         return binding.root
     }
 

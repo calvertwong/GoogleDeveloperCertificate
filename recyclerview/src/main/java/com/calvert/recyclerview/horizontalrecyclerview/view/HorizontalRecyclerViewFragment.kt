@@ -4,24 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.calvert.mockdata.MOCK_DATA_LIST
 import com.calvert.recyclerview.databinding.FragmentHorizontalRecyclerViewBinding
 import com.calvert.recyclerview.horizontalrecyclerview.adapter.HorizontalAdapter
 import com.calvert.recyclerview.horizontalrecyclerview.adapter.HorizontalEndlessAdapter
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class HorizontalRecyclerViewFragment : Fragment() {
+class HorizontalRecyclerViewFragment : AppViewBindingBaseFragment<FragmentHorizontalRecyclerViewBinding>() {
 
-    private var _binding: FragmentHorizontalRecyclerViewBinding? = null
-    private val binding: FragmentHorizontalRecyclerViewBinding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentHorizontalRecyclerViewBinding.inflate(inflater, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        setBinding(FragmentHorizontalRecyclerViewBinding.inflate(inflater, container, false))
         return binding.root
     }
 
@@ -76,10 +70,5 @@ class HorizontalRecyclerViewFragment : Fragment() {
             // This formula ensures that the starting item will be the first item in the list
             this.layoutManager?.scrollToPosition(Integer.MAX_VALUE / MOCK_DATA_LIST.size / 2 * MOCK_DATA_LIST.size)
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.calvert.responsiveuiconstraintlayout.R
+import com.calvert.responsiveuiconstraintlayout.databinding.FragmentChainBinding
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class ChainFragment : Fragment() {
+class ChainFragment : AppViewBindingBaseFragment<FragmentChainBinding>() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_chain, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        setBinding(FragmentChainBinding.inflate(inflater, container, false))
+        return binding.root
     }
 
 }

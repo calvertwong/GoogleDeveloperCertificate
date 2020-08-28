@@ -1,10 +1,12 @@
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation Libs.androidx_navigation__navigation_fragment
-    implementation Libs.androidx_navigation__navigation_ui
     implementation Libs.org_jetbrains_kotlin__kotlin_stdlib_jdk7
     implementation Libs.junit__junit
     implementation Libs.androidx_test_ext__junit
+
+    // jetpack navigation
+    implementation Libs.androidx_navigation__navigation_fragment
+    implementation Libs.androidx_navigation__navigation_ui
 
     implementation project(":common")
 

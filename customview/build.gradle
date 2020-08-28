@@ -5,10 +5,14 @@ dependencies {
     implementation Libs.androidx_core_core_ktx
     implementation Libs.androidx_legacy__legacy_support_v4
     testImplementation Libs.junit__junit
-    implementation Libs.com_google_android_material__material
-    implementation Libs.androidx_constraintlayout_constraintlayout
-    androidTestImplementation Libs.junit__junit
+    androidTestImplementation Libs.androidx_test_ext__junit
     androidTestImplementation Libs.androidx_test_espresso__espresso_core
+
+    // material library
+    implementation Libs.com_google_android_material__material
+
+    // constraint layout
+    implementation Libs.androidx_constraintlayout_constraintlayout
 
     implementation project(':common')
 }

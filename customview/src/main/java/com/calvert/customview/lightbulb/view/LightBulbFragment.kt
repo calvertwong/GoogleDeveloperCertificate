@@ -5,15 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.calvert.customview.databinding.FragmentLightBulbBinding
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class LightBulbFragment : Fragment() {
-    private var _binding: FragmentLightBulbBinding? = null
-    private val binding get() = _binding!!
+class LightBulbFragment : AppViewBindingBaseFragment<FragmentLightBulbBinding>() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentLightBulbBinding.inflate(inflater, container, false)
+        setBinding(FragmentLightBulbBinding.inflate(inflater, container, false))
         return binding.root
     }
 

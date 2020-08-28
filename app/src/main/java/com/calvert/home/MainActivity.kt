@@ -1,4 +1,4 @@
-package com.calvert.googledevelopercertificate
+package com.calvert.home
 
 import android.os.Bundle
 import android.view.Menu
@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.calvert.googledevelopercertificate.R
 import com.calvert.googledevelopercertificate.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.calvert.customview.speedknob
+package com.calvert.customview.speedknob.util
 
 import android.content.Context
 import android.content.res.TypedArray

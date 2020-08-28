@@ -2,9 +2,18 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Libs.org_jetbrains_kotlin__kotlin_stdlib_jdk7
     implementation Libs.androidx_appcompat__appcompat
-    implementation Libs.com_google_android_material__material
     implementation Libs.androidx_core_core_ktx
     testImplementation Libs.junit__junit
     androidTestImplementation Libs.androidx_test_ext__junit
     androidTestImplementation Libs.androidx_test_espresso__espresso_core
+
+    // material library
+    implementation Libs.com_google_android_material__material
+
+    // jetpack navigation
+    implementation Libs.androidx_navigation__navigation_fragment_ktx
+
+    // glide
+    implementation Libs.com_github_bumptech_glide__glide
+    implementation Libs.com_github_bumptech_glide__compiler
 }

@@ -7,7 +7,11 @@ dependencies {
     testImplementation Libs.junit__junit
     androidTestImplementation Libs.androidx_test_ext__junit
     androidTestImplementation Libs.androidx_test_espresso__espresso_core
+
+    // material library
     implementation Libs.com_google_android_material__material
+
+    // constraint layout
     implementation Libs.androidx_constraintlayout_constraintlayout
 
     implementation project(':common')

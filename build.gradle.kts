@@ -4,7 +4,8 @@ plugins {
 }
 
 val viewBindingModules: List<String> = listOf(
-    "app", "common", "customview", "dialogs", "donate", "menu", "recyclerview", "responsiveuiconstraintlayout", "tablayout", "toasts", "viewbinding"
+    "app", "common", "customview", "dialogs", "donate", "menu", "recyclerview", "responsiveuiconstraintlayout", "tablayout", "toasts", "viewbinding",
+    "fcm"
 )
 
 val dataBindingModules: List<String> = listOf(
@@ -26,6 +27,7 @@ buildscript {
     dependencies {
         classpath(kotlin("gradle-plugin", version = Versions.kotlin_version))
         classpath("com.android.tools.build:gradle:4.0.1")
+        classpath("com.google.gms:google-services:4.3.3")
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -50,6 +52,7 @@ subprojects {
 fun Project.configureApplication() {
     println("\nConfiguring Application")
     apply(plugin = "com.android.application")
+    apply(plugin = "com.google.gms.google-services")
     configureCommon()
 }
 

@@ -69,4 +69,5 @@ dependencies {
     implementation project(':dialogs')
     implementation project(':tablayout')
     implementation project(':navigation')
+    implementation project(':fcm')
 }

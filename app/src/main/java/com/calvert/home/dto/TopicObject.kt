@@ -1,4 +1,4 @@
-package com.calvert.googledevelopercertificate.dto
+package com.calvert.home.dto
 
 data class TopicObject(
     val title: String,

@@ -1,21 +1,19 @@
 package com.calvert.recyclerview.verticalrecyclerview.landingpage.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.calvert.recyclerview.R
+import com.calvert.recyclerview.databinding.ItemLandingpageRvBinding
 import com.calvert.recyclerview.dto.RvItemObject
 import com.calvert.recyclerview.verticalrecyclerview.landingpage.viewholder.LandingPageVerticalViewHolder
 
 class LandingPageVerticalAdapter(private val rvItemList: List<RvItemObject>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    lateinit var context: Context
+    private lateinit var binding: ItemLandingpageRvBinding
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        context = parent.context
-        return LandingPageVerticalViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_landingpage_rv, parent, false)
-        )
+        binding = ItemLandingpageRvBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return LandingPageVerticalViewHolder(binding.root)
     }
 
     override fun getItemCount(): Int = rvItemList.size

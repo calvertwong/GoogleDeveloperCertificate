@@ -5,20 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.calvert.tablayout.databinding.FragmentAnimatedTabLayoutBinding
 import com.calvert.tablayout.demo.adapter.ViewPagedAdapter
 import com.calvert.tablayout.demo.transformer.AnimatedViewPagerAdapter
+import com.calvert.ui.AppViewBindingBaseFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class AnimatedTabLayoutFragment : Fragment() {
-
-    private var _binding: FragmentAnimatedTabLayoutBinding? = null
-    private val binding get() = _binding!!
+class AnimatedTabLayoutFragment : AppViewBindingBaseFragment<FragmentAnimatedTabLayoutBinding>() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentAnimatedTabLayoutBinding.inflate(inflater, container, false)
+        setBinding(FragmentAnimatedTabLayoutBinding.inflate(inflater, container, false))
         return binding.root
     }
 
@@ -51,10 +48,4 @@ class AnimatedTabLayoutFragment : Fragment() {
 
         })
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
-
 }

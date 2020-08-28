@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.selection.SelectionPredicates
 import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.selection.StableIdKeyProvider
@@ -16,19 +15,14 @@ import com.calvert.mockdata.MOCK_DATA_LIST
 import com.calvert.recyclerview.databinding.FragmentListSelectionRecyclerViewBinding
 import com.calvert.recyclerview.verticalrecyclerview.listselection.CustomItemLookup
 import com.calvert.recyclerview.verticalrecyclerview.listselection.adapter.ListSelectionAdapter
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class ListSelectionRecyclerViewFragment : Fragment() {
-
-    private var _binding: FragmentListSelectionRecyclerViewBinding? = null
-    private val binding: FragmentListSelectionRecyclerViewBinding get() = _binding!!
+class ListSelectionRecyclerViewFragment : AppViewBindingBaseFragment<FragmentListSelectionRecyclerViewBinding>() {
 
     private var tracker: SelectionTracker<Long>? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentListSelectionRecyclerViewBinding.inflate(layoutInflater, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        setBinding(FragmentListSelectionRecyclerViewBinding.inflate(layoutInflater, container, false))
         return binding.root
     }
 
@@ -36,8 +30,7 @@ class ListSelectionRecyclerViewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val rvLayoutManager = LinearLayoutManager(requireContext())
-        val rvAdapter =
-            ListSelectionAdapter(MOCK_DATA_LIST)
+        val rvAdapter = ListSelectionAdapter(MOCK_DATA_LIST)
 
         binding.rvVertical.apply {
             layoutManager = rvLayoutManager
@@ -56,7 +49,6 @@ class ListSelectionRecyclerViewFragment : Fragment() {
             SelectionPredicates.createSelectAnything()
         ).build()
 
-        // some handlers
         tracker?.addObserver(
             object : SelectionTracker.SelectionObserver<Long>() {
                 var selectedItemSize: Int? = 0
@@ -87,12 +79,5 @@ class ListSelectionRecyclerViewFragment : Fragment() {
 
         // init tracker after the initialization of the adapter
         rvAdapter.tracker = tracker
-
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

@@ -4,19 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.calvert.mockdata.MOCK_DATA_LIST
 import com.calvert.recyclerview.databinding.FragmentGridRecyclerViewBinding
 import com.calvert.recyclerview.gridrecyclerview.adapter.GridAdapter
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class GridRecyclerViewFragment : Fragment() {
-
-    private var _binding: FragmentGridRecyclerViewBinding? = null
-    private val binding get() = _binding!!
+class GridRecyclerViewFragment : AppViewBindingBaseFragment<FragmentGridRecyclerViewBinding>() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentGridRecyclerViewBinding.inflate(inflater, container, false)
+        setBinding(FragmentGridRecyclerViewBinding.inflate(inflater, container, false))
         return binding.root
     }
 

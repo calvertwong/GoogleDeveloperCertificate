@@ -6,16 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.calvert.toasts.R
+import com.calvert.toasts.databinding.FragmentToastBasicBinding
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class BasicToastFragment : Fragment() {
+class BasicToastFragment : AppViewBindingBaseFragment<FragmentToastBasicBinding>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_toast_basic, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        setBinding(FragmentToastBasicBinding.inflate(inflater, container, false))
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -1,17 +1,16 @@
 package com.calvert.recyclerview.verticalrecyclerview.listselection.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.mockdata.MockDataObject
-import com.calvert.recyclerview.R
+import com.calvert.recyclerview.databinding.ItemUserLayoutBinding
 import com.calvert.recyclerview.verticalrecyclerview.listselection.viewholder.ListSelectionViewHolder
 
-class ListSelectionAdapter(private val mockDataList: List<MockDataObject>) : RecyclerView.Adapter<RecyclerView
-.ViewHolder>() {
-    lateinit var context: Context
+class ListSelectionAdapter(private val mockDataList: List<MockDataObject>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    private lateinit var binding: ItemUserLayoutBinding
 
     var tracker: SelectionTracker<Long>? = null
 
@@ -20,10 +19,8 @@ class ListSelectionAdapter(private val mockDataList: List<MockDataObject>) : Rec
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        context = parent.context
-        return ListSelectionViewHolder(
-            LayoutInflater.from(context).inflate(R.layout.item_user_layout, parent, false)
-        )
+        binding = ItemUserLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ListSelectionViewHolder(binding.root)
     }
 
     override fun getItemCount(): Int = mockDataList.size

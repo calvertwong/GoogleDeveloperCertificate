@@ -1,4 +1,4 @@
-package com.calvert.dialogs.alertdialog
+package com.calvert.dialogs.alertdialog.view
 
 import android.content.DialogInterface
 import android.os.Bundle
@@ -6,21 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.calvert.dialogs.alertdialog.util.AlertDialogFragment
 import com.calvert.dialogs.databinding.FragmentAlertDialogDemoBinding
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class AlertDialogDemoFragment : Fragment() {
+class AlertDialogDemoFragment : AppViewBindingBaseFragment<FragmentAlertDialogDemoBinding>() {
 
-    private var _binding: FragmentAlertDialogDemoBinding? = null
-    private val binding get() = _binding!!
-
-    lateinit var positiveAction: DialogInterface.OnClickListener
-    lateinit var negativeAction: DialogInterface.OnClickListener
-    lateinit var neutralAction: DialogInterface.OnClickListener
+    private lateinit var positiveAction: DialogInterface.OnClickListener
+    private lateinit var negativeAction: DialogInterface.OnClickListener
+    private lateinit var neutralAction: DialogInterface.OnClickListener
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentAlertDialogDemoBinding.inflate(inflater, container, false)
+        setBinding(FragmentAlertDialogDemoBinding.inflate(inflater, container, false))
         return binding.root
     }
 
@@ -46,7 +43,7 @@ class AlertDialogDemoFragment : Fragment() {
                 "Positive message is located here.",
                 "Yes",
                 positiveAction
-            ).show(requireFragmentManager(), "Normal dialog with positive button.")
+            ).show(parentFragmentManager, "Normal dialog with positive button.")
         }
 
         binding.btnNormalDialogNegativeOnly.setOnClickListener {
@@ -55,7 +52,7 @@ class AlertDialogDemoFragment : Fragment() {
                 message = "Negative message is located here.",
                 negativeButtonText = "No",
                 negativeAction = negativeAction
-            ).show(requireFragmentManager(), "Normal dialog with negative button.")
+            ).show(parentFragmentManager, "Normal dialog with negative button.")
         }
 
         binding.btnNormalDialogNeutralOnly.setOnClickListener {
@@ -64,7 +61,7 @@ class AlertDialogDemoFragment : Fragment() {
                 message = "Neutral message is located here.",
                 neutralButtonText = "Cancel",
                 neutralAction = neutralAction
-            ).show(requireFragmentManager(), "Normal dialog with neutral button.")
+            ).show(parentFragmentManager, "Normal dialog with neutral button.")
         }
 
         binding.btnNormalTwoButtonsAlertDialogOnly.setOnClickListener {
@@ -75,7 +72,7 @@ class AlertDialogDemoFragment : Fragment() {
                 positiveAction = positiveAction,
                 neutralButtonText = "Cancel",
                 neutralAction = neutralAction
-            ).show(requireFragmentManager(), "Normal dialog with neutral button.")
+            ).show(parentFragmentManager, "Normal dialog with neutral button.")
         }
 
         binding.btnNormalDialogAllButtons.setOnClickListener {
@@ -91,13 +88,7 @@ class AlertDialogDemoFragment : Fragment() {
             )
             // this prevents user to dismiss the dialog on outside click
             allButtonsAlertDialog.isCancelable = false
-            allButtonsAlertDialog.show(requireFragmentManager(), "Normal dialog with all buttons and not cancellable.")
+            allButtonsAlertDialog.show(parentFragmentManager, "Normal dialog with all buttons and not cancellable.")
         }
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
-
 }

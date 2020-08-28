@@ -4,15 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.calvert.tablayout.R
+import com.calvert.tablayout.databinding.FragmentTabOneBinding
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class TabOneFragment : Fragment() {
+class TabOneFragment : AppViewBindingBaseFragment<FragmentTabOneBinding>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_tab_one, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        setBinding(FragmentTabOneBinding.inflate(inflater, container, false))
+        return binding.root
     }
 }

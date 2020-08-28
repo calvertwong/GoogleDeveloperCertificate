@@ -16,7 +16,7 @@ this works. -->
     <!--App Module-->
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.calvert.googledevelopercertificate.ui.home.HomeFragment"
+        android:name="com.calvert.home.ui.HomeFragment"
         android:label="@string/title_home">
 
         <action
@@ -227,7 +227,7 @@ this works. -->
     <!--dialogs module-->
     <fragment
         android:id="@+id/navigation_dialogs_alert_dialogs"
-        android:name="com.calvert.dialogs.alertdialog.AlertDialogDemoFragment"
+        android:name="com.calvert.dialogs.alertdialog.view.AlertDialogDemoFragment"
         android:label="@string/alert_dialogs" />
 
     <fragment

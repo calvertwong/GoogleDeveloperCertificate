@@ -4,24 +4,29 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.mockdata.MockDataObject
-import com.calvert.recyclerview.R
+import com.calvert.recyclerview.databinding.ItemUserLayoutBinding
+import com.calvert.recyclerview.databinding.ItemUserLayoutGreenBinding
 import com.calvert.recyclerview.verticalrecyclerview.multiviews.viewholder.GreenViewHolder
 import com.calvert.recyclerview.verticalrecyclerview.multiviews.viewholder.WhiteViewHolder
 
-class MultiViewsAdapter(private val mockDataList: List<MockDataObject>) : RecyclerView.Adapter<RecyclerView
-.ViewHolder>() {
+class MultiViewsAdapter(private val mockDataList: List<MockDataObject>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    private lateinit var binding: ItemUserLayoutBinding
+    private lateinit var bindingGreen: ItemUserLayoutGreenBinding
 
     private val TYPE_WHITE = 0
     private val TYPE_GREEN = 1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
-            TYPE_WHITE -> WhiteViewHolder(
-                LayoutInflater.from(parent.context).inflate(R.layout.item_user_layout, parent, false)
-            )
-            else -> GreenViewHolder(
-                LayoutInflater.from(parent.context).inflate(R.layout.item_user_layout_green, parent, false)
-            )
+            TYPE_WHITE -> {
+                binding = ItemUserLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                WhiteViewHolder(binding.root)
+            }
+            else -> {
+                bindingGreen = ItemUserLayoutGreenBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                GreenViewHolder(bindingGreen.root)
+            }
         }
     }
 

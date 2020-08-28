@@ -21,5 +21,4 @@ class AnimateAlwaysViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
     fun clearAnimation() {
         binding.root.clearAnimation()
     }
-
 }

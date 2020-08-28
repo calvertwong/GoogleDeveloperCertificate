@@ -6,22 +6,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.calvert.dialogs.databinding.FragmentTimePickerDemoBinding
 import com.calvert.dialogs.timepickerdialog.constant.TimePickerConstants
 import com.calvert.dialogs.timepickerdialog.util.TimePickerFragment
+import com.calvert.ui.AppViewBindingBaseFragment
 
-class TimePickerDemoFragment : Fragment() {
+class TimePickerDemoFragment : AppViewBindingBaseFragment<FragmentTimePickerDemoBinding>() {
 
-    private var _binding: FragmentTimePickerDemoBinding? = null
-    private val binding get() = _binding!!
-
-    lateinit var timePicker: TimePickerFragment
+    private lateinit var timePicker: TimePickerFragment
 
     private val REQUEST_CODE = 12
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentTimePickerDemoBinding.inflate(inflater, container, false)
+        setBinding(FragmentTimePickerDemoBinding.inflate(inflater, container, false))
         return binding.root
     }
 
@@ -31,7 +28,7 @@ class TimePickerDemoFragment : Fragment() {
         binding.btnTimePickerFragment.setOnClickListener {
             timePicker = TimePickerFragment()
             timePicker.setTargetFragment(this, REQUEST_CODE)
-            timePicker.show(requireFragmentManager(), "timePicker")
+            timePicker.show(parentFragmentManager, "timePicker")
         }
     }
 
@@ -42,10 +39,5 @@ class TimePickerDemoFragment : Fragment() {
                 }"
             binding.tvSelectedTime.text = result
         }
-    }
-
-    override fun onDestroy() {
-        _binding = null
-        super.onDestroy()
     }
 }

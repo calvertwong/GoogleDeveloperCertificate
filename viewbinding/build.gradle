@@ -1,14 +1,18 @@
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation Libs.androidx_constraintlayout_constraintlayout
     implementation Libs.org_jetbrains_kotlin__kotlin_stdlib_jdk7
     implementation Libs.androidx_appcompat__appcompat
-    implementation Libs.com_google_android_material__material
     implementation Libs.androidx_core_core_ktx
     implementation Libs.androidx_legacy__legacy_support_v4
     testImplementation Libs.junit__junit
     androidTestImplementation Libs.androidx_test_ext__junit
     androidTestImplementation Libs.androidx_test_espresso__espresso_core
+
+    // constraint layout
+    implementation Libs.androidx_constraintlayout_constraintlayout
+
+    // material library
+    implementation Libs.com_google_android_material__material
 
     implementation project(':common')
 }

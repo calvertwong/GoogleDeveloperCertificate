@@ -1,4 +1,4 @@
-package com.calvert.customview.lightbulb
+package com.calvert.customview.lightbulb.util
 
 import android.content.Context
 import android.content.res.TypedArray

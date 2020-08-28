@@ -1,7 +1,7 @@
 package com.calvert.recyclerview.verticalrecyclerview.landingpage.viewholder
 
 import android.view.View
-import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.calvert.recyclerview.databinding.ItemLandingpageRvBinding
 import com.calvert.recyclerview.dto.RvItemObject
@@ -13,9 +13,8 @@ class LandingPageVerticalViewHolder(itemView: View) : RecyclerView.ViewHolder(it
         with(binding) {
             tvLandingpageRvTitle.text = item.title
             tvLandingpageRvDesc.text = item.desc
-            itemView.setOnClickListener {
-                Navigation.createNavigateOnClickListener(item.rvNavActionId, null)
-                    .onClick(it)
+            root.setOnClickListener {
+                it.findNavController().navigate(item.rvNavActionId)
             }
         }
     }

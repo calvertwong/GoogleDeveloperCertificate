@@ -1,20 +1,21 @@
-package com.calvert.googledevelopercertificate.ui.home.adapter
+package com.calvert.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.calvert.googledevelopercertificate.R
-import com.calvert.googledevelopercertificate.ui.home.viewholder.TopicButtonItemViewHolder
+import com.calvert.googledevelopercertificate.databinding.ItemTopicButtonBinding
+import com.calvert.home.viewholder.TopicButtonItemViewHolder
 
 class TopicButtonItemAdapter(
     private val buttonTextList: List<String>,
     private val navActionId: List<Int>
-) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    private lateinit var binding: ItemTopicButtonBinding
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return TopicButtonItemViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_topic_button, parent, false)
-        )
+        binding = ItemTopicButtonBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return TopicButtonItemViewHolder(binding.root)
     }
 
     override fun getItemCount(): Int {

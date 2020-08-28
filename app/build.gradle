@@ -37,18 +37,26 @@ dependencies {
     implementation Libs.org_jetbrains_kotlin__kotlin_stdlib_jdk7
     implementation Libs.androidx_appcompat__appcompat
     implementation Libs.androidx_core_core_ktx
-    implementation Libs.com_google_android_material__material
-    implementation Libs.androidx_constraintlayout_constraintlayout
     implementation Libs.androidx_vectordrawable__vectordrawable
-    implementation Libs.androidx_navigation__navigation_fragment
-    implementation Libs.androidx_navigation__navigation_ui
-    implementation Libs.androidx_lifecycle__lifecycle_extensions
-    implementation Libs.androidx_navigation__navigation_fragment_ktx
-    implementation Libs.androidx_navigation__navigation_ui_ktx
     testImplementation Libs.junit__junit
     androidTestImplementation Libs.androidx_test_ext__junit
     androidTestImplementation Libs.androidx_test_espresso__espresso_core
     implementation Libs.androidx_multidex__multidex
+
+    // material library
+    implementation Libs.com_google_android_material__material
+
+    // constraint layout
+    implementation Libs.androidx_constraintlayout_constraintlayout
+
+    // jetpack navigation
+    implementation Libs.androidx_navigation__navigation_fragment
+    implementation Libs.androidx_navigation__navigation_ui
+    implementation Libs.androidx_navigation__navigation_fragment_ktx
+    implementation Libs.androidx_navigation__navigation_ui_ktx
+
+    // androidx lifecycle
+    implementation Libs.androidx_lifecycle__lifecycle_extensions
 
     implementation project(':donate')
     implementation project(':toasts')

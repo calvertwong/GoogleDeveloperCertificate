@@ -26,3 +26,5 @@
   **[] $VALUES;
   public *;
 }
+
+-keep class com.calvert.recyclerview.dto.*

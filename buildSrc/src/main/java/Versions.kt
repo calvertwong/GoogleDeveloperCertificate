@@ -1,5 +1,5 @@
 object Versions {
-    private const val kotlin_version = "1.3.72"
+    const val kotlin_version = "1.3.72"
     private const val nav_version = "2.3.0-beta01"
 
     const val androidx_appcompat__appcompat: String = "1.2.0"

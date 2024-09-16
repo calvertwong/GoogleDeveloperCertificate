@@ -58,6 +58,10 @@ dependencies {
     // androidx lifecycle
     implementation Libs.androidx_lifecycle__lifecycle_extensions
 
+    // koin
+    implementation Libs.org_koin__koin_core
+    implementation Libs.org_koin__koin_android
+
     implementation project(':donate')
     implementation project(':toasts')
     implementation project(':viewbinding')

@@ -1,6 +1,7 @@
 object Versions {
     const val kotlin_version = "1.4.0"
     private const val nav_version = "2.3.0-beta01"
+    private const val koin_version = "2.1.6"
 
     const val androidx_appcompat__appcompat: String = "1.2.0"
     const val org_jetbrains_kotlin__kotlin_stdlib_jdk7: String = kotlin_version
@@ -42,4 +43,8 @@ object Versions {
 
     // firebase cloud messaging
     const val com_google_firebase__firebase_messaging: String = "20.2.0"
+
+    // koin
+    const val org_koin__koin_core: String = koin_version
+    const val org_koin__koin_android: String = koin_version
 }
